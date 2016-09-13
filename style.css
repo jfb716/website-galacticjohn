@@ -1,0 +1,11 @@
+.passback_tag {
+    height: 300px;
+    width: 500px;
+}
+
+#drop_zone { 
+    width: 800px;
+    border: 10px dashed #ccc; 
+    height: 600px; 
+}
+

@@ -9,56 +9,52 @@
         <meta name="description" content="Test Site for John F. Black">
         <meta name="keywords" content="John, John Black, John F Black, John F. Black, John Francis Black, Test Site, Test, Synacor, Facebook, NBC, NBCUniversal, LocalEdge, Buffalo, New York, New York City, NYC, Grand Island, University at Buffalo, UB, Technical Support, Ad Operations, AdOps, AdTech">
         <title>GalacticJohn</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" media="(max-width:499px)" href="css/small.css">
-        <link rel="stylesheet" media="(min-width:500px) and (max-width:732px)" href="css/med.css">
-        <link rel="stylesheet" media="(min-width:732px) and (max-width:1050px)" href="css/large.css">
-        <link rel="stylesheet" media="(min-width:1051px)" href="css/xlarge.css">
+        <link rel="stylesheet" href="style.css">
+      
+        <!-- JavaScript API's -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         
-        <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
-        <script>
-          var googletag = googletag || {};
-          googletag.cmd = googletag.cmd || [];
-        </script>
-
-        <script>
-          googletag.cmd.push(function() {
-            googletag.defineSlot('/27721068/johnfblack', [300, 250], 'div-gpt-ad-1471629104257-0').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-          });
-        </script>
+        <!-- My JavaScript -->
+        <script src="script.js"></script>
+        <script src="jquery.js"></script>
+        
     </head>
     <body>
-
-    <header>
-    </header>
-    <br>
-    <div class="blue_bar_top">
-    </div>
-    <br>
-    <br>
-
-    <div style="height:250px;width:300px;margin:auto">
-
-    <div id='div-gpt-ad-1471629104257-0' style='height:250px; width:300px;'>
-        <script>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1471629104257-0'); });
-        </script>
-    </div>
-
-    </div>
-        
-        <br>
-        <br>
-        
-
-    <div class="blue_bar_bot">
-    </div>
-    <br>
-    <footer>
-    </footer>
-    
-</body>
+        <main>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">Passback Tool</a></li>
+                    <li><a href="#tabs-2">Native Tool</a></li>
+                </ul>
+                <div id="tabs-1">
+                       
+                       
+                        <label for="passback_type">Passback Type: </label>
+                            <select class="passback_type menu" name="passback_type">
+                              <option selected="selected" value="nothing" class="nothing">-</option>
+                              <option value="passback_1" class="one">DFP</option>
+                              <option value="passback_2" class="two">AdX</option>
+                              <option value="passback_3" class="three">AdSense</option>
+                              <option value="passback_4" class="four">Rubicon</option>
+                            </select>
+                        <br>
+                        <br>
+                        <label for="passback_tag">Passback Tag:</label>
+                        <br>
+                            <textarea class="passback_tag"></textarea>
+                        <br>
+                        <button class="passback_button">Insert Passback</button>
+                        <br>
+                        <textarea id="drop_zone">Drop files here</textarea>
+                </div>
+                <div id="tabs-2">
+                    
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
 
