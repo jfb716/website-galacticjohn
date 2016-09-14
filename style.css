@@ -3,6 +3,11 @@
     width: 500px;
 }
 
+.example {
+    height: 300px;
+    width: 500px;
+}
+
 #drop_zone { 
     width: 800px;
     border: 10px dashed #ccc; 

@@ -12,6 +12,17 @@ $(function(){
 /* ------ Buttons ------- */
 $("button").button();
     
+/* ------ Passback Dropdown Example Image Display ------- */
+$(".passback_type").change(function(){
+   var value = $(".passback_type").val();
+   console.log(value);
+    
+   if(value === "passback_1") {
+       console.log("DFP Was Selected");
+       $(".example").html("<img src='dfp_passback_example.png'/>");
+   }
+});
+    
 
 /* ------ DFP Passback Extract ------ */
 
