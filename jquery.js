@@ -3,6 +3,8 @@ $(document).ready(function(){
 /*----- Hide Refresh Button ------ */
     
 $(".refresh_button").hide();
+    
+
 
 /* ------ Tabs ------ */ 
 $(function(){
@@ -16,17 +18,52 @@ $("button").button();
 $(".passback_type").change(function(){
    var value = $(".passback_type").val();
    console.log(value);
-    
+   $("button.passback_button").removeClass("dfp_button adsense_async_button");
+   $(".example").empty();
+
+
+/* ------ DFP Dropdown Selection ------ */    
    if(value === "passback_1") {
        console.log("DFP Was Selected");
        $(".example").html("<img src='dfp_passback_example.png'/>");
+       $("button.passback_button").addClass("dfp_button");
+       $(".example_box").css({"height": "100px"});
    }
+    
+    else if (value === "passback_2") {
+        console.log("AdX Was Selected");
+        $(".example_box").css({"height": "100px"});
+    }
+    
+    else if (value === "passback_3") {
+        console.log("AdSense Async Was Selected");
+        $(".example").html("<img src='adsense_async_example.png'/>");
+        $("button.passback_button").addClass("adsense_async_button");
+        $(".example_box").css({"height": "150px"});
+    }
+    
+    else if (value === "passback_4") {
+        console.log("AdSense Sync Was Selected");
+        $(".example").html("<img src='adsense_sync_example.png'/>");
+        $("button.passback_button").addClass("adsense_sync_button");
+        $(".example_box").css({"height": "250px"});
+    }
+    
+    else if (value === "passback_5") {
+        console.log("Rubicon Was Selected");
+        $(".example_box").css({"height": "100px"});
+    }
+    
+    else {
+        console.log("Nothing Was Selected");
+        $(".example_box").css({"height": "100px"});
+    }
 });
     
 
 /* ------ DFP Passback Extract ------ */
 
-$(".passback_button").click(function(){
+$(document).on("click",".dfp_button", function(){
     
     var dfpPassback = $(".passback_tag").val();
     
@@ -74,6 +111,7 @@ $(".passback_button").click(function(){
     $(".passback_button").hide();
     $(".refresh_button").show();
     $(".passback_tag").val('');
+    $(".example").empty();
 
 });
     

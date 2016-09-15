@@ -1,16 +1,32 @@
-.passback_tag {
-    height: 300px;
-    width: 500px;
-}
-
-.example {
-    height: 300px;
-    width: 500px;
+#tabs-1 {
+    height: 100%;
 }
 
 #drop_zone { 
     width: 800px;
     border: 10px dashed #ccc; 
-    height: 600px; 
+    height: 600px;
 }
 
+.passback_box {
+    height: 200px;
+    width: 600px;
+    margin: 20px 0;
+}
+
+.example_box {
+    height: 100px;
+    width: 600px;
+    margin: 20px 0;
+}
+
+.passback_tag {
+    height: 70%;
+    width: 90%;
+}
+
+.example img {
+    height: 100%;
+    width: 100%;
+
+}

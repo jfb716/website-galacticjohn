@@ -31,26 +31,34 @@
                 </ul>
                 <div id="tabs-1">
                        
-                       
+                       <div class="type_box">
                         <label for="passback_type">Passback Type: </label>
                             <select class="passback_type menu" name="passback_type">
                               <option selected="selected" value="nothing" class="nothing">-</option>
                               <option value="passback_1" class="one">DFP</option>
                               <option value="passback_2" class="two">AdX</option>
-                              <option value="passback_3" class="three">AdSense</option>
-                              <option value="passback_4" class="four">Rubicon</option>
+                              <option value="passback_3" class="three">AdSense Async</option>
+                              <option value="passback_4" class="three">AdSense Sync</option>
+                              <option value="passback_5" class="four">Rubicon</option>
                             </select>
-                        <br>
-                        <br>
+                       </div>
+                        
+                       <div class="passback_box grid_box">
                         <label for="passback_tag">Passback Tag:</label>
                         <br>
+                        <br>
                             <textarea class="passback_tag"></textarea>
+                       </div>
+                       
+                       <div class="example_box grid_box">
                         <label for="example">Example Tag:</label>
                             <p class="example"></p>
+                       </div>
                         <br>
                         <button class="passback_button">Insert Passback</button>
                         <br>
-                        <textarea id="drop_zone">Drop files here</textarea>
+                        <br>
+                        <textarea id="drop_zone">Drop Audience Netowrk .txt File Here</textarea>
                         <br>
                         <button class="refresh_button">Refresh Page</button>
                 </div>
