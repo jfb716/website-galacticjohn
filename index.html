@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en-US" ng-app"myApp">
+<html lang="en-US">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +9,8 @@
         <meta name="description" content="Test Site for John F. Black">
         <meta name="keywords" content="John, John Black, John F Black, John F. Black, John Francis Black, Test Site, Test, Synacor, Facebook, NBC, NBCUniversal, LocalEdge, Buffalo, New York, New York City, NYC, Grand Island, University at Buffalo, UB, Technical Support, Ad Operations, AdOps, AdTech">
         <title>GalacticJohn</title>
+        
+        <!-- Site Styles -->
         <link rel="stylesheet" href="style.css">
       
         <!-- JavaScript API's -->
@@ -16,104 +18,55 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         
         <!-- My JavaScript -->
-        <script src="script.js"></script>
         <script src="jquery.js"></script>
         <script src="angular.js"></script>
+        <script src="script.js"></script>
     </head>
     <body>
         <main>
+            <header>
+                <h1 id="site_title">The John &amp; Oleg Times</h1>
+                <p id="date"></p>
+                <p id="weather">New York City: 95&deg;</p>
+                <p id="stock">FB Stock: 128</p>
+            </header>
             <div id="tabs">
                 <ul>
-                    <li><a href="#tabs-1">Passback Tool</a></li>
-                    <li><a href="#tabs-2">Native Tool</a></li>
+                    <li><a href="#tabs-1">Cover</a></li>
+                    <li><a href="#tabs-2">AudNet News</a></li>
+                    <li><a href="#tabs-3">Hockey Standings</a></li>
+                    <li><a href="#tabs-3">FIFA Standings</a></li>
                 </ul>
                 <div id="tabs-1">
-                       
-                       <div class="type_box">
-                        <label for="passback_type">Passback Type: </label>
-                            <select class="passback_type menu" name="passback_type">
-                              <option selected="selected" value="nothing" class="nothing">-</option>
-                              <option value="passback_1" class="one">DFP</option>
-                              <option value="passback_2" class="two">AdX</option>
-                              <option value="passback_3" class="three">AdSense Async</option>
-                              <option value="passback_4" class="three">AdSense Sync</option>
-                              <option value="passback_5" class="four">Rubicon</option>
-                            </select>
-                       </div>
-                    <div class="controlBox">
-                       <div class="dfp">
-                              <label for="adSenseAsyncWidth">Width: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Height: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                          </div>
-                          <div class="adx">
-                              <label for="adSenseAsyncWidth">Width: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Height: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                          </div>
-                          <div class="adSenseAsync">
-                              <label for="adSenseAsyncWidth">Width: </label>
-                              <input id="adSenseAsyncWidth" type="text" ng-model="adsense">
-                              <br>
-                              <label for="adSenseAsyncWidth">Height: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                          </div>
-                          <div class="adSenseSync">
-                              <label for="adSenseAsyncWidth">Width: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Height: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                          </div>
-                          <div class="rubicon">
-                              <label for="adSenseAsyncWidth">Width: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Height: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                              <br>
-                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
-                              <input id="adSenseAsyncWidth" type="text">
-                          </div>
-                           
-                       </div>
-                       <textarea class="tagOutput"></textarea>
-
-                      
-                </div>
+                    <div class="leaderboard"></div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="ad_box"></div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"<span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.></div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="ad_box"></div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
+                    <div class="ad_box"></div>
+                </div>   
                 <div id="tabs-2">
                     
                 </div>

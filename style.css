@@ -1,33 +1,63 @@
-#tabs-1 {
-    height: 800px; 
+html {
+    width: 1000px;
+    margin: auto;
+    height: 100%;
 }
 
-
-.type_box {
+header {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid grey;
+    border-bottom: 2px solid black;
     margin: 20px 0;
 }
 
-.controlBox {
-    height: 500px;
-    width: 500px; 
-    border: 1px solid black;
-    display: inline-block; 
-    box-sizing: border-box; 
-    position: absolute; 
-    padding: 20px;
+#site_title {
+    font-family: Garamond,georgia,"times new roman",serif;
+    font-size: 36px;
 }
 
+#date, #weather, #stock {
+    display: inline-block;
+    margin: 0 20px;
+}
 
-.tagOutput {
-    height: 500px;
-    width: 500px; 
+.leaderboard {
+    height: 90px;
+    width: 728px;
+    margin: auto;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    background-color: black;
+}
+
+.content_box {
+    height: 250px;
+    width: 300px;
     display: inline-block;
     box-sizing: border-box;
-    position: absolute;
-    left: 600px; 
     padding: 20px;
+    margin: 10px 0; 
+    border: 1px solid black;
+    vertical-align: top;
+    font-size: 16px;
 }
 
-input {
-    margin-bottom: 20px;
+.headline {
+    font-weight: 900;
+    font-size: 26px;
 }
+
+.ad_box {
+    height: 250px;
+    width: 300px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px 0; 
+    border: 1px solid black;
+    background-color: black;
+    vertical-align: top;
+}
+
+
