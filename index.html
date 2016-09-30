@@ -12,6 +12,7 @@
         
         <!-- Site Styles -->
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
       
         <!-- JavaScript API's -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -19,6 +20,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
         
         <!-- My JavaScript -->
         <script src="jquery.js"></script>
@@ -28,7 +30,7 @@
     <body>
         <main>
             <header>
-                <h1 id="site_title">The John &amp; Oleg Times</h1>
+                <h1 id="site_title">The J &amp; O Times</h1>
                 <p id="date"></p>
                 <p id="weather">New York City: 95&deg;</p>
                 <p id="stock">FB Stock: 128</p>
@@ -68,7 +70,86 @@
                     <div class="ad_box"></div>
                 </div>   
                 <div id="tabs-2">
+                    test
+                </div>
+                <div id="tabs-3">
+                    <div id="gameInsert">
+                        Date: <input type="date" name="date" class="fieldsStandings">
+                        Home: <select class="fieldsStandings">
+                            <option value="John">John</option>
+                            <option value="Oleg">Oleg</option>
+                            <option value="Amit">Amit</option>
+                            <option value="David">David</option>
+                            <option value="Heath">Heath</option>
+                        </select>
+                        Away: <select class="fieldsStandings">
+                            <option value="John">John</option>
+                            <option value="Oleg">Oleg</option>
+                            <option value="Amit">Amit</option>
+                            <option value="David">David</option>
+                            <option value="Heath">Heath</option>
+                        </select>
+                        Winner: <select class="fieldsStandings">
+                            <option value="John">John</option>
+                            <option value="Oleg">Oleg</option>
+                            <option value="Amit">Amit</option>
+                            <option value="David">David</option>
+                            <option value="Heath">Heath</option>
+                        </select>
+                        <br>
+                        Win Goals: <input type="number" min="0" max="10" class="fieldsStandings">
+                        Lose Goals: <input type="number" min="0" max="10" class="fieldsStandings">
+                        Game: <select class="fieldsStandings">
+                            <option value="NHL_2012">NHL 2012</option>
+                            <option value="NHL_2013">NHL 2013</option>
+                            <option value="FIFA_2012">FIFA 2012</option>
+                        </select>
+                    </div>
                     
+                    <table id="myTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Home</th>
+                                <th>Away</th>
+                                <th>Winner</th>
+                                <th>Win Goals</th>
+                                <th>Lose Goals</th>
+                                <th>Game</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Date</th>
+                                <th>Home</th>
+                                <th>Away</th>
+                                <th>Winner</th>
+                                <th>Win Goals</th>
+                                <th>Lose Goals</th>
+                                <th>Game</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            <tr>
+                                <td>10/01/2016</td>
+                                <td>John</td>
+                                <td>Oleg</td>
+                                <td>John</td>
+                                <td>4</td>
+                                <td>2</td>
+                                <td>NHL 2012</td>
+                            </tr>
+                            <tr>
+                                <td>10/01/2016</td>
+                                <td>David</td>
+                                <td>Amit</td>
+                                <td>Amit</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>NHL 2012</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>
