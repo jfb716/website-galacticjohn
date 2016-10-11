@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -13,6 +12,8 @@
         <!-- Site Styles -->
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="player.css">
+
       
         <!-- JavaScript API's -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -26,13 +27,17 @@
         <script src="jquery.js"></script>
         <script src="angular.js"></script>
         <script src="script.js"></script>
+        <script src="player.js"></script>
+        
+        
+       
     </head>
     <body>
         <main>
             <header>
                 <h1 id="site_title">The OJ Times</h1>
                 <p id="date"></p>
-                <p id="weather">New York City: <span id="temp"></span>&deg;F</p>
+                <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
                 <p id="stock">FB Share Price: &#36;<span id="stock_price"></span> </p>
             </header>
             <div id="tabs">
@@ -42,8 +47,51 @@
                     <li><a href="#tabs-3">Hockey Standings</a></li>
                     <li><a href="#tabs-3">FIFA Standings</a></li>
                 </ul>
-                <div id="tabs-1">
-                    <div class="leaderboard"></div>
+                <div id="tabs-1" class="container">
+                    <div class="leaderboard">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <!-- galactic_728x90 -->
+                        <ins class="adsbygoogle"
+                             style="display:inline-block;width:728px;height:90px"
+                             data-ad-client="ca-pub-3180281153437608"
+                             data-ad-slot="8983915777"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                    <div class="player">
+                     <div id="player">
+        
+                        <div id="video-container">
+                            <div id="screen">
+                                <img id="screen-button" src="images/play.png" style="border-radius:50px;height:75px;width:75px;">
+                            </div>
+                            <video id="video" poster="images/thumbnail.png">
+                                <source src="sample.mp4">
+                                Error, update your browser. 
+                           </video>
+                        </div>
+
+                        <div id="pbar-container">
+                            <div id="pbar">
+                            </div>
+                        </div>
+                 
+                        <div id="buttons-container">
+                            <img id="play-button" src="images/play.png">
+                            <div id="time-field">
+                                0:00 / 0:00
+                            </div>
+                            <img id="sound-button" src="images/sound.png">
+                            <div id="sbar-container">
+                                <div id="sbar">
+                                </div>
+                            </div>
+                            <img id="fullscreen-button" src="images/fullscreen.png">
+                        </div>
+                        </div>
+                    </div>
+                    
                     <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
                     <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
                     <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
@@ -70,7 +118,7 @@
                     <div class="ad_box"></div>
                 </div>   
                 <div id="tabs-2">
-                    test
+                 
                 </div>
                 <div id="tabs-3">
                     <div id="gameInsert">

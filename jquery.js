@@ -19,14 +19,6 @@ var d = new Date();
 document.getElementById("date").innerHTML = d.toDateString();
 
     
-/* ------- IA API ------- */
-    
-$.ajax({
-  url: "https://developers.facebook.com/blog/iablog/rss",
-  dataType: "xml",
-});
-    
-    
 
 /* ------- Weather Temp API ------- */
     
