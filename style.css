@@ -67,7 +67,7 @@ header {
 
 
 #gameInsert {
-    height: 200px; 
+    height: auto; 
     width: 100%;
     background-color: #cccccc;
     padding: 10px;
@@ -80,3 +80,46 @@ header {
 .fieldsStandings {
    margin: 10px 15px;
 }
+
+.greyBox {
+    background-color: #cecece;
+    height: 200px;
+    padding: 75px;
+    box-sizing: border-box;
+}
+
+#prebidAd {
+    height: 252px;
+    width: 302px;
+    border: 1px solid black;
+    margin: 10px auto;
+}
+
+
+#tokenResults, #requestAn {
+    background-color: #cecece; 
+    border: none;
+    color: #129836;
+    margin-left: 5px;
+    font-weight: 800;
+    
+}
+
+.prebidLabels {
+    color: #000000; 
+    font-weight: 800;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

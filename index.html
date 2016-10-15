@@ -29,6 +29,21 @@
         <script src="script.js"></script>
         <script src="player.js"></script>
         
+        <!-- Google GPT Header Tag -->
+        <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+        <script>
+          var googletag = googletag || {};
+          googletag.cmd = googletag.cmd || [];
+        </script>
+
+        <script>
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/27721068/johnfblack_prebid_test', [300, 250], 'div-gpt-ad-1476566875985-0').setTargeting('audnet', ['john']).addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+          });
+        </script>
+        
         
        
     </head>
@@ -124,27 +139,49 @@
                  
                 </div>
                 <div id="tabs-3">
+                    <div class="greyBox">
+                        <div id="prebidData">
+                        <label for="tokenResults" class="prebidLabels">Prebid Token Results:</label><input id="tokenResults" value="85739834938928" readonly type="text">
+                        <br>
+                        <label for="tokenResults" class="prebidLabels">Request Audience Network:</label><input id="requestAn" value="Yes" readonly type="text">
+                        </div>
+                    </div>
                     
+                    <div id="prebidAd">
+                    
+                        <div id='div-gpt-ad-1476566875985-0' style='height:250px; width:300px;'>
+                        <script>
+                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1476566875985-0'); });
+                        </script>
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="greyBox">
+                        
+                    </div>
                 </div>
                 
                 <div id="tabs-4">
                     <div id="gameInsert">
-                        Date: <input type="date" name="date" class="fieldsStandings">
-                        Home: <select class="fieldsStandings">
+                        Date: <input type="date" name="date" class="fieldsStandings" id="gameDate">
+                        <br>
+                        <hr>
+                        Home: <select class="fieldsStandings" id="home">
                             <option value="John">John</option>
                             <option value="Oleg">Oleg</option>
                             <option value="Amit">Amit</option>
                             <option value="David">David</option>
                             <option value="Heath">Heath</option>
                         </select>
-                        Away: <select class="fieldsStandings">
+                        Away: <select class="fieldsStandings" id="away">
                             <option value="John">John</option>
                             <option value="Oleg">Oleg</option>
                             <option value="Amit">Amit</option>
                             <option value="David">David</option>
                             <option value="Heath">Heath</option>
                         </select>
-                        Winner: <select class="fieldsStandings">
+                        Winner: <select class="fieldsStandings" id="winner">
                             <option value="John">John</option>
                             <option value="Oleg">Oleg</option>
                             <option value="Amit">Amit</option>
@@ -152,13 +189,19 @@
                             <option value="Heath">Heath</option>
                         </select>
                         <br>
-                        Win Goals: <input type="number" min="0" max="10" class="fieldsStandings">
-                        Lose Goals: <input type="number" min="0" max="10" class="fieldsStandings">
-                        Game: <select class="fieldsStandings">
-                            <option value="NHL_2012">NHL 2012</option>
-                            <option value="NHL_2013">NHL 2013</option>
-                            <option value="FIFA_2012">FIFA 2012</option>
+                        <hr>
+                        Win Goals: <input type="number" min="0" max="10" class="fieldsStandings" id="winGoals">
+                        Lose Goals: <input type="number" min="0" max="10" class="fieldsStandings" id="loseGoals">
+                        <br>
+                        <hr>
+                        Game: <select class="fieldsStandings" id="gamePlayed">
+                            <option value="NHL 2012">NHL 2012</option>
+                            <option value="NHL 2013">NHL 2013</option>
+                            <option value="FIFA 2012">FIFA 2012</option>
                         </select>
+                        <br>
+                        <hr>
+                        <button id="addButton">Add</button>
                     </div>
                     
                     <table id="myTable">
@@ -186,7 +229,7 @@
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td>10/01/2016</td>
+                                <td>2016-10-01</td>
                                 <td>John</td>
                                 <td>Oleg</td>
                                 <td>John</td>
@@ -195,7 +238,7 @@
                                 <td>NHL 2012</td>
                             </tr>
                             <tr>
-                                <td>10/01/2016</td>
+                                <td>2016-10-01</td>
                                 <td>David</td>
                                 <td>Amit</td>
                                 <td>Amit</td>
