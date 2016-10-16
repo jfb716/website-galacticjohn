@@ -1,10 +1,6 @@
 $(document).ready(function(){   
     
-    
-/* ------ Tabs ------ */ 
-$(function(){
-   $("#tabs").tabs(); 
-});
+
     
 /* ------ Buttons ------- */
 $("button").button();

@@ -3,12 +3,13 @@ html {
 }
 
 body {
-    width: 1000px;
+    width: 1200px;
     margin: auto;
     height: 100%;
     background-color: white; 
     border: 1px solid #888888; 
     padding: 5px;
+    text-align: center;
 }
 
 header {
@@ -18,6 +19,30 @@ header {
     border-bottom: 2px solid grey;
     margin: 20px 0;
 }
+
+.navBar {
+    display: flex;
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #000;
+    text-decoration: none; 
+}
+
+li a {
+    display: block; 
+    padding: 14px 16px;
+    text-decoration: none; 
+    text-align: center; 
+    color: #fff;
+    font-size: 20px;
+    width: 140px;
+}
+
+li a:hover {
+    background-color: #525252;
+}
+
 
 #site_title {
     font-family: Garamond,georgia,"times new roman",serif;
@@ -36,16 +61,18 @@ header {
     display: inline-block;
     box-sizing: border-box;
     padding: 20px;
-    margin: 10px 0; 
+    margin: 10px 30px; 
     border: 1px solid black;
     vertical-align: top;
     font-size: 16px;
     color: #a8a8a8;
+    text-align: left;
 }
 
 .section_name {
     margin-bottom: -5px;
     color: #5c5c5c;
+    text-align: left;
 }
 
 .headline {
@@ -59,7 +86,7 @@ header {
     display: inline-block;
     box-sizing: border-box;
     padding: 10px;
-    margin: 10px 0; 
+    margin: 10px 30px; 
     border: 1px solid black;
     background-color: black;
     vertical-align: top;
@@ -83,14 +110,16 @@ header {
 
 .greyBox {
     background-color: #cecece;
-    height: 200px;
-    padding: 75px;
+    height: 300px;
+    padding: 100px;
     box-sizing: border-box;
+    text-align: left;
+    margin: 10px;
 }
 
 #prebidAd {
-    height: 252px;
-    width: 302px;
+    height: 250px;
+    width: 300px;
     border: 1px solid black;
     margin: 10px auto;
 }
@@ -102,12 +131,14 @@ header {
     color: #129836;
     margin-left: 5px;
     font-weight: 800;
+    font-size: 20px;
     
 }
 
 .prebidLabels {
     color: #000000; 
     font-weight: 800;
+    font-size: 20px;
 }
 
 

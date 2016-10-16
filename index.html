@@ -55,17 +55,16 @@
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
                 <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
             </header>
-            <div id="tabs">
-                <ul>
-                    <li><a href="#tabs-1">Cover</a></li>
-                    <li><a href="#tabs-2">Prebid.js</a></li>
-                    <li><a href="#tabs-3">AN Prebid</a></li>
-                    <li><a href="#tabs-4">Xbox Tracker</a></li>
-                    <li><a href="#tabs-5">Native Gallery</a></li>
-                    <li><a href="#tabs-6">Native Editor</a></li>
-                    <li><a href="#tabs-7">Passback Tool</a></li>
+                <ul class="navBar">
+                    <li><a href="index.html">Cover</a></li>
+                    <li><a href="headerbidding.html">Prebid.js</a></li>
+                    <li><a href="prebidscript.html">AN Prebid</a></li>
+                    <li><a href="xbox.html">Xbox Tracker</a></li>
+                    <li><a href="nativegal.html">Native Gallery</a></li>
+                    <li><a href="nativeed.html">Native Editor</a></li>
+                    <li><a href="passbacktool.html">Passback Tool</a></li>
                 </ul>
-                <div id="tabs-1">
+                   
                     <div class="player">
                      <div id="player">
         
@@ -134,133 +133,8 @@
                     <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
                     <div class="content_box"><span class="headline">Lorem ipsum dolor</span> sit amet, consectetur adipisicing elit. Qui quaerat voluptate officiis ad voluptatum, recusandae provident numquam enim quidem nam excepturi quod nulla laborum soluta nobis sequi assumenda corporis, vitae.</div>
                     <div class="ad_box"></div>
-                </div>   
-                <div id="tabs-2">
-                 
-                </div>
-                <div id="tabs-3">
-                    <div class="greyBox">
-                        <div id="prebidData">
-                        <label for="tokenResults" class="prebidLabels">Prebid Token Results:</label><input id="tokenResults" value="85739834938928" readonly type="text">
-                        <br>
-                        <label for="tokenResults" class="prebidLabels">Request Audience Network:</label><input id="requestAn" value="Yes" readonly type="text">
-                        </div>
-                    </div>
-                    
-                    <div id="prebidAd">
-                    
-                        <div id='div-gpt-ad-1476566875985-0' style='height:250px; width:300px;'>
-                        <script>
-                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1476566875985-0'); });
-                        </script>
-                        </div>
-                    
-                    </div>
-                    
-                    <div class="greyBox">
-                        
-                    </div>
-                </div>
-                
-                <div id="tabs-4">
-                    <div id="gameInsert">
-                        Date: <input type="date" name="date" class="fieldsStandings" id="gameDate">
-                        <br>
-                        <hr>
-                        Home: <select class="fieldsStandings" id="home">
-                            <option value="John">John</option>
-                            <option value="Oleg">Oleg</option>
-                            <option value="Amit">Amit</option>
-                            <option value="David">David</option>
-                            <option value="Heath">Heath</option>
-                        </select>
-                        Away: <select class="fieldsStandings" id="away">
-                            <option value="John">John</option>
-                            <option value="Oleg">Oleg</option>
-                            <option value="Amit">Amit</option>
-                            <option value="David">David</option>
-                            <option value="Heath">Heath</option>
-                        </select>
-                        Winner: <select class="fieldsStandings" id="winner">
-                            <option value="John">John</option>
-                            <option value="Oleg">Oleg</option>
-                            <option value="Amit">Amit</option>
-                            <option value="David">David</option>
-                            <option value="Heath">Heath</option>
-                        </select>
-                        <br>
-                        <hr>
-                        Win Goals: <input type="number" min="0" max="10" class="fieldsStandings" id="winGoals">
-                        Lose Goals: <input type="number" min="0" max="10" class="fieldsStandings" id="loseGoals">
-                        <br>
-                        <hr>
-                        Game: <select class="fieldsStandings" id="gamePlayed">
-                            <option value="NHL 2012">NHL 2012</option>
-                            <option value="NHL 2013">NHL 2013</option>
-                            <option value="FIFA 2012">FIFA 2012</option>
-                        </select>
-                        <br>
-                        <hr>
-                        <button id="addButton">Add</button>
-                    </div>
-                    
-                    <table id="myTable">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Home</th>
-                                <th>Away</th>
-                                <th>Winner</th>
-                                <th>Win Goals</th>
-                                <th>Lose Goals</th>
-                                <th>Game</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Date</th>
-                                <th>Home</th>
-                                <th>Away</th>
-                                <th>Winner</th>
-                                <th>Win Goals</th>
-                                <th>Lose Goals</th>
-                                <th>Game</th>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            <tr>
-                                <td>2016-10-01</td>
-                                <td>John</td>
-                                <td>Oleg</td>
-                                <td>John</td>
-                                <td>4</td>
-                                <td>2</td>
-                                <td>NHL 2012</td>
-                            </tr>
-                            <tr>
-                                <td>2016-10-01</td>
-                                <td>David</td>
-                                <td>Amit</td>
-                                <td>Amit</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>NHL 2012</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="tabs-5">
-                    
-                </div>
-                <div id="tabs-6">
-                    
-                </div>
-                <div id="tabs-7">
-                    
-                </div>
-                
-        
-            </div>
+  
+               
         </main>
     </body>
 </html>
