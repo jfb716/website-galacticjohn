@@ -55,6 +55,40 @@ $("#addButton").click(function(){
 });
    
     
+    
+/* ------- Prebid Script ------- */
+    
+var prebidToken = 'nobid';
+    
+$("#tokenResults").val(prebidToken);
+$("#requestAn").val(function(){
+   if (prebidToken === 'nobid') {
+       return 'No';
+   } 
+    else {
+        return 'Yes';
+    }
+});
+    
+var goodStyles = {
+  color : "green"  
+};
+    
+var badStyles = {
+  color : "red"  
+};
+    
+if (prebidToken === 'nobid') {
+  $("#tokenResults, #requestAn").css(badStyles);  
+} 
+    else {
+        $("#tokenResults, #requestAn").css(goodStyles);
+    }
+    
+
+    
+    
+    
 });
 
 

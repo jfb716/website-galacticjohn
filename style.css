@@ -100,12 +100,16 @@ li a:hover {
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
+    margin-top: 15px;
     font-weight: 900;
+   
+    font-size: 18px;
 }
 
 
 .fieldsStandings {
    margin: 10px 15px;
+    font-size: 16px;
 }
 
 .greyBox {
@@ -128,7 +132,6 @@ li a:hover {
 #tokenResults, #requestAn {
     background-color: #cecece; 
     border: none;
-    color: #129836;
     margin-left: 5px;
     font-weight: 800;
     font-size: 20px;
@@ -136,7 +139,6 @@ li a:hover {
 }
 
 .prebidLabels {
-    color: #000000; 
     font-weight: 800;
     font-size: 20px;
 }

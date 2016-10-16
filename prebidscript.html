@@ -27,7 +27,30 @@
         <script src="jquery.js"></script>
         <script src="angular.js"></script>
         <script src="script.js"></script>
-        <script src="player.js"></script>
+       
+        <!-- Prebid Script -->
+        
+        <script>
+          window.anPrebidAsyncInit = function() {
+            var prebid = new AudienceNetworkPrebid(
+              'YOUR_PLACEMENT',
+              document.getElementById('prebidAd') 
+            );
+            prebid.getProfile(function(profile) {
+              var token = profile.token;
+                console.log(token);
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.com/en_US/AudienceNetworkPrebid.js";
+             fjs.parentNode.insertBefore(js, fjs);
+           }(document, 'script', 'an-prebid'));
+        </script>
+
         
         <!-- Google GPT Header Tag -->
         <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
@@ -37,8 +60,9 @@
         </script>
 
         <script>
+            
           googletag.cmd.push(function() {
-            googletag.defineSlot('/27721068/johnfblack_prebid_test', [300, 250], 'div-gpt-ad-1476566875985-0').setTargeting('audnet', ['john']).addService(googletag.pubads());
+            googletag.defineSlot('/27721068/johnfblack_prebid_test', [300, 250], 'div-gpt-ad-1476566875985-0').setTargeting('audnet', [token]).addService(googletag.pubads());
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
           });
@@ -57,8 +81,8 @@
             </header>
                 <ul class="navBar">
                     <li><a href="index.html">Cover</a></li>
-                    <li><a href="headerbidding.html">Prebid.js</a></li>
-                    <li><a href="prebidscript.html">AN Prebid</a></li>
+                    <li><a href="headerbidding.html">Header Bidding</a></li>
+                    <li><a href="prebidscript.html">Prebid Script</a></li>
                     <li><a href="xbox.html">Xbox Tracker</a></li>
                     <li><a href="nativegal.html">Native Gallery</a></li>
                     <li><a href="nativeed.html">Native Editor</a></li>
@@ -67,9 +91,9 @@
                 
                     <div class="greyBox">
                         <div id="prebidData">
-                        <label for="tokenResults" class="prebidLabels">Prebid Token Results:</label><input id="tokenResults" value="85739834938928" readonly type="text">
+                        <label for="tokenResults" class="prebidLabels">Prebid Token Results:</label><input id="tokenResults" readonly type="text">
                         <br>
-                        <label for="tokenResults" class="prebidLabels">Request Audience Network:</label><input id="requestAn" value="Yes" readonly type="text">
+                        <label for="tokenResults" class="prebidLabels">Request Audience Network:</label><input id="requestAn" readonly type="text">
                         </div>
                     </div>
                     
