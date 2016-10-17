@@ -28,17 +28,45 @@
         <script src="angular.js"></script>
         <script src="script.js"></script>
        
+         
         <!-- Prebid Script -->
-        
         <script>
+            var tokenToken;
           window.anPrebidAsyncInit = function() {
             var prebid = new AudienceNetworkPrebid(
-              'YOUR_PLACEMENT',
+              '118220978561571_223415828042085',
               document.getElementById('prebidAd') 
             );
-            prebid.getProfile(function(profile) {
+            prebid.getProfile(function(profile, j) {
               var token = profile.token;
-                console.log(token);
+                console.log("token:" + token);
+                tokenToken = token; 
+                console.log("tokenToken1:" + tokenToken);
+                
+                $("#tokenResults").val(tokenToken);
+                $("#requestAn").val(function(){
+                   if (tokenToken === 'nobid') {
+                       return 'No';
+                   } 
+                    else {
+                        return 'Yes';
+                    }
+                });
+
+                var goodStyles = {
+                  color : "green"  
+                };
+
+                var badStyles = {
+                  color : "red"  
+                };
+
+                if (tokenToken === 'nobid') {
+                  $("#tokenResults, #requestAn").css(badStyles);  
+                } 
+                    else {
+                        $("#tokenResults, #requestAn").css(goodStyles);
+                    }
             });
           };
 
@@ -51,22 +79,33 @@
            }(document, 'script', 'an-prebid'));
         </script>
 
+
         
-        <!-- Google GPT Header Tag -->
-        <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+        <!-- GPT Tag -->
+        
+               <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+        
+            
         <script>
           var googletag = googletag || {};
           googletag.cmd = googletag.cmd || [];
         </script>
 
-        <script>
+        
             
+        <script>
+          var delay = 1000;
+          setTimeout(function(){
           googletag.cmd.push(function() {
-            googletag.defineSlot('/27721068/johnfblack_prebid_test', [300, 250], 'div-gpt-ad-1476566875985-0').setTargeting('audnet', [token]).addService(googletag.pubads());
+            console.log("tokenToken2:" + tokenToken);
+            googletag.defineSlot('/27721068/johnfblack_prebid_test', [300, 250], 'div-gpt-ad-1476566875985-0').setTargeting('audnet', [tokenToken]).addService(googletag.pubads());
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
           });
+          }, delay);
         </script>
+        
+            
         
         
        
