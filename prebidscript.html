@@ -43,6 +43,13 @@
                 tokenToken = token; 
                 console.log("tokenToken1:" + tokenToken);
                 
+                /* -------- Place the DFP script on the page once the variable is defined -------- */
+                var script_html = "<scr"+"ipt async='async' src='https://www.googletagservices.com/tag/js/gpt.js'><\/scr"+"ipt>";
+
+                $(script_html).appendTo("head");
+                
+                /* ------- Jquery code for visualizing the token on the page -------- */
+                
                 $("#tokenResults").val(tokenToken);
                 $("#requestAn").val(function(){
                    if (tokenToken === 'nobid') {
@@ -68,6 +75,8 @@
                         $("#tokenResults, #requestAn").css(goodStyles);
                     }
             });
+              
+    
           };
 
           (function(d, s, id){
@@ -82,9 +91,6 @@
 
         
         <!-- GPT Tag -->
-        
-               <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
-        
             
         <script>
           var googletag = googletag || {};
@@ -94,15 +100,14 @@
         
             
         <script>
-          var delay = 1000;
-          setTimeout(function(){
+          
           googletag.cmd.push(function() {
             console.log("tokenToken2:" + tokenToken);
             googletag.defineSlot('/27721068/johnfblack_prebid_test', [300, 250], 'div-gpt-ad-1476566875985-0').setTargeting('audnet', [tokenToken]).addService(googletag.pubads());
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
           });
-          }, delay);
+        
         </script>
         
             
@@ -130,7 +135,7 @@
                 
                     <div class="greyBox">
                         <div id="prebidData">
-                        <label for="tokenResults" class="prebidLabels">Prebid Token Results:</label><input id="tokenResults" readonly type="text">
+                        <label for="tokenResults" class="prebidLabels">Prebid Token Results:</label><input size="50" id="tokenResults" readonly type="text">
                         <br>
                         <label for="tokenResults" class="prebidLabels">Request Audience Network:</label><input id="requestAn" readonly type="text">
                         </div>
