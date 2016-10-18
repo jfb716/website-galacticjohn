@@ -1,0 +1,79 @@
+/* ------ Passback Helper ------ */
+
+#passbackHelper {
+    height: 1100px;
+    background-color: #cbcbcb;
+}
+
+#demo_on, #demo_off {
+    float: left;
+    margin: 30px 10px;
+}
+
+.type_box {
+    margin: 30px 10px;
+    text-align: left;
+    clear: both;
+}
+
+.controlBox {
+    height: 400px;
+    width: 550px;; 
+    border: 3px ridge #8e8e8e;
+    display: inline-flex; 
+    float: left;
+    box-sizing: border-box; 
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+}
+
+
+.tagOutput {
+    height: 400px;
+    width: 550px;; 
+    display: inline-flex;
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-y: auto;
+    border: 3px ridge #8e8e8e;
+    background-color: white;
+    margin: 20px;
+}
+
+#drop_zone { 
+    width: 550px;
+    border: 3px ridge #8e8e8e;
+    display: inline-flex;
+    float: left;
+    height: 400px;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+.passbackTest {
+    height: 400px;
+    width: 550px; 
+    display: inline-flex;
+    box-sizing: border-box;
+    padding: 5% 10%;
+    overflow-y: auto;
+    border: 3px ridge #8e8e8e;
+    background-color: white;
+    margin: 20px;
+}
+
+#executeHelper {
+    position: absolute;
+    bottom: 20px;
+    left: 35%;
+}
+
+#pageReload {
+    position: absolute;
+    bottom: 20px;
+    left: 35%;
+}

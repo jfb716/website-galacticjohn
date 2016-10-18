@@ -1,0 +1,64 @@
+/* ------ Native Editor ------ */
+
+#nativeEditor {
+    background-color: #cbcbcb;
+}
+
+hr {
+    margin: 15px 0;
+}
+
+
+input {
+    display: inline-block; 
+    width: 150px;
+    background-color: #000000;
+    border-radius: 5px;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+.box_left {
+    display: inline-block;
+    width: 370px;
+    height: 800px;
+    border: 3px ridge #8e8e8e;
+    text-align: justify;
+    position: relative;
+    top: -60px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.box_middle {
+    display: inline-block;
+    width: 350px;
+    border: 3px ridge #8e8e8e;
+    height: 600px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: 0 20px;
+    position: relative;
+    top: -100px;
+    color: #cccccc;
+    background-color: white;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+
+.box_right {
+    font-size: 10px;
+    width: 370px;
+    height: 800px;
+    word-wrap: break-word;
+    border: 3px ridge #8e8e8e;
+    display: inline-block;
+    overflow-y: auto;
+    text-align: justify;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    top: 80px;
+    position: relative;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" ng-app="myApp" ng-controller="myCtrl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,9 +10,10 @@
         <title>GalacticJohn - Native Gallery</title>
         
         <!-- Site Styles -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="resources/css/style.css">
+        <link rel="stylesheet" href="resources/css/nativegallery.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" type="text/css" href="player.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
       
         <!-- JavaScript API's -->
@@ -21,13 +22,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
         
         <!-- My JavaScript -->
-        <script src="jquery.js"></script>
-        <script src="angular.js"></script>
-        <script src="script.js"></script>
-        <script src="player.js"></script>
+        <script src="resources/javascript/jquery.js"></script>
+        <script src="resources/javascript/angular.js"></script>
         
         
        
@@ -35,7 +33,7 @@
     <body>
         <main>
             <header>
-                <h1 id="site_title">The OJ Times</h1>
+                <h1 id="site_title">The Kabob Times</h1>
                 <p id="date"></p>
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
                 <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
@@ -49,7 +47,96 @@
                     <li><a href="nativeed.html">Native Editor</a></li>
                     <li><a href="passbacktool.html">Passback Tool</a></li>
                 </ul>
-                
+                <div id="nativeGallery">
+                     <div class="grid_box" id="grid_0">
+                       <div class="ion-information-circled" title="Default Banner Tag"></div>
+                       <p>Consectetur adipisicing elit. Commodi blanditiis magnam minus libero nesciunt nemo.</p>
+                        <banner-tag></banner-tag>
+                        <p>Consectetur adipisicing elit. Ab maiores velit consequuntur dolor.</p>
+                        <a href="resources/gallery_downloads/banner.txt" download="banner_tag"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/banner_dfp.txt" download="banner_dfp_tag"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_1">
+                      <div class="ion-information-circled" title="Default Native Tag"></div>
+                       <p>Consectetur adipisicing elit. Commodi blanditiis magnam minus libero nesciunt nemo.</p>
+                        <default-native-tag></default-native-tag>
+                        <p>Consectetur adipisicing elit. Ab maiores velit consequuntur dolor earum aspernatur nam.</p>
+                        <a href="resources/gallery_downloads/default.txt" download="default_css"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/default.txt" download="default_css"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_2">
+                      <div class="ion-information-circled" title="New Instant Articles Format"></div>
+                       <p>Lorem ipsum dolor sit amet. At earum ipsam, eligendi seq, nobis suscipit similique dignissimos.</p>
+                        <new-instant-articles-tag></new-instant-articles-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ducimus omnis tempora.</p>
+                        <a href="resources/gallery_downloads/instant_new.txt" download="tempalte_1"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/instant_new_dfp.txt" download="tempalte_1_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_3">
+                      <div class="ion-information-circled" title="Old Instant Articles Format"></div>
+                       <p>Lorem ipsum dolor sit amet. Repudiandae ratione consectetur sunt perspiciatis atque.</p>
+                        <old-instant-articles-tag></old-instant-articles-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quibusdam. Eos dolore optio!</p>
+                        <a href="resources/gallery_downloads/instant.txt" download="template_2"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/instant_dfp.txt" download="template_2_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_6">
+                      <div class="ion-information-circled" title="Independent Journal Tag"></div>
+                       <p>Lorem ipsum dolor sit amet, consectetur adipi. Necessitatibus tenetur asperiores inventore similique debitis provident dolor sit amet. Ea iustog.</p>
+                        <independent-journal-tag></independent-journal-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur sequi, nostrum aliquam expedita corporis aspernatur quam, vel iusto, deserunt dolore sit commodi illo amet praesent deserunt dolore sit.</p>
+                        <a href="resources/gallery_downloads/independent.txt" download="template_5"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/independent_dfp.txt" download="template_5_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_7">
+                      <div class="ion-information-circled" title="Legacy Tag"></div>
+                       <p>Lorem ipsum dolor sit amet, consectetur elit. Incidunt esse , cupiditate adipisci ducimus illum, porro quia quis aliquid nobis, sunt odit explicabo nemo!</p>
+                        <legacy-tag></legacy-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni quia error aliquid, excepturi accusamus eum ab nulla at laudantium, sequi iure laboriosam ullam, ea ipsum magnam fugit assumenda et!.</p>
+                        <a href="resources/gallery_downloads/legacy.txt" download="template_6"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/legacy_dfp.txt" download="template_6_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_9">
+                      <div class="ion-information-circled" title="The Chive Small Unit"></div>
+                       <p>Lorem ipsum dolor sit amet. Repudiandae ratione consectetur sunt perspiciatis atque. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        <chive-true-tag></chive-true-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quibusdam. Eos dolore optio! Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        <a href="resources/gallery_downloads/chive_true.txt" download="template_8"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/chive_true_dfp.txt" download="template_8_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_10">
+                      <div class="ion-information-circled" title="The Chive Large Unit"></div>
+                       <p>Lorem ipsum dolor sit amet. Repudiandae ratione consectetur sunt perspiciatis atque.</p>
+                        <chive-block-tag></chive-block-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui, quibusdam. Eos dolore optio!</p>
+                        <a href="resources/gallery_downloads/chive_block.txt" download="template_9"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/chive_block_dfp.txt" download="template_9_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_8">
+                      <div class="ion-information-circled" title="Little Things Tag"></div>
+                       <p>Lorem ipsum dolor sit amet. Incidunt illum ab similique commodi, quae excepturi est!</p>
+                        <little-things-tag></little-things-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam et soluta provident!</p>
+                        <a href="resources/gallery_downloads/littlethings.txt" download="template_7"><button class="gallery_buttons">Direct</button></a> 
+                        <a href="resources/gallery_downloads/littlethings_dfp.txt" download="template_7_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_4">
+                      <div class="ion-information-circled" title="Cooking Panda Tag"></div>
+                       <p>Lorem ipsum dolor sit. Ea tenetur harum, id libero, blanditiis ullam  saepe et quod.</p>
+                        <cooking-panda-tag></cooking-panda-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita nulla deleniti placeat.</p>
+                        <a href="resources/gallery_downloads/cooking.txt" download="template_3"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/cooking_dfp.txt" download="template_3_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                   <div class="grid_box" id="grid_5">
+                      <div class="ion-information-circled" title="Digg Tag"></div>
+                       <p>Lorem ipsum dolor sit amet, consectetur. Ea iusto ad dolores.</p>
+                        <digg-tag></digg-tag>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing. Ipsum excepturi laborum similique unde repudiandae corporis.</p>
+                        <a href="resources/gallery_downloads/digg.txt" download="template_4"><button class="gallery_buttons">Direct</button></a>
+                        <a href="resources/gallery_downloads/digg_dfp.txt" download="template_4_dfp"><button class="gallery_buttons">DFP</button></a>
+                   </div>
+                </div>
         </main>
     </body>
 </html>

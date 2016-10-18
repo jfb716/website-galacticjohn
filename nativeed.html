@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" ng-app="myApp" ng-controller="myCtrl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,9 +10,10 @@
         <title>GalacticJohn - Native Editor</title>
         
         <!-- Site Styles -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="resources/css/style.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" type="text/css" href="player.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/nativeeditor.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
       
         <!-- JavaScript API's -->
@@ -21,13 +22,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
         
         <!-- My JavaScript -->
-        <script src="jquery.js"></script>
-        <script src="angular.js"></script>
-        <script src="script.js"></script>
-        <script src="player.js"></script>
+        <script src="resources/javascript/jquery.js"></script>
+        <script src="resources/javascript/angular.js"></script>
+        <script src="resources/javascript/script.js"></script>
         
         
        
@@ -35,7 +35,7 @@
     <body>
         <main>
             <header>
-                <h1 id="site_title">The OJ Times</h1>
+                <h1 id="site_title">The Kabob Times</h1>
                 <p id="date"></p>
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
                 <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
@@ -49,7 +49,53 @@
                     <li><a href="nativeed.html">Native Editor</a></li>
                     <li><a href="passbacktool.html">Passback Tool</a></li>
                 </ul>
-                
+                <div id="nativeEditor">
+                  <div class="box_left">
+                        <label for="placementId">Placement-ID:<input id="placementId" type="text" ng-model="placementid"></label>
+                            <br>
+                            <hr>
+                        <label for="fontFam"><div title="Enter fonts seperated by commas, if font is more than one word enclose in double quotes (e.g. &quot;Times New Roman&quot;, Georgia, Serif)" class="ion-information-circled"></div>Font-Family:<input type="text" id="fontFam" ng-model="fontfamily" ng-init="Arial, Helvetica, sans-serif"><button class="button fontFamButton">Update</button></label>
+                            <br>
+                            <hr>
+                        <label for="subFontSize"><div title="Accepts any positive integer. Make sure to include &quot;px&quot; on the end (e.g. 14px)" class="ion-information-circled"></div>SubTitle-Size:<input type="text" id="subFontSize" ng-model="subFontSize"></label>
+                            <br>
+                        <label for="subFontWeight"><div title="Accepts any font weight values (e.g. 100, 200, 300, 400, 500, 600, 700, 800, 900, normal, bold, bolder, lighter)" class="ion-information-circled"></div>SubTitle-Weight:<input type="text" id="subFontWeight" ng-model="subFontWeight"><button class="button subTitButton">Update</button></label>
+                            <br>
+                            <hr>
+                        <label for="titFontSize"><div title="Accepts any positive integer. Make sure to include &quot;px&quot; on the end (e.g. 14px)" class="ion-information-circled"></div>Title-Size:<input type="text" id="titFontSize" ng-model="titFontSize"></label>
+                            <br>
+                        <label for="titFontWeight"><div title="Accepts any font weight values (e.g. 100, 200, 300, 400, 500, 600, 700, 800, 900, normal, bold, bolder, lighter)" class="ion-information-circled"></div>Title-Weight:<input type="text" id="titFontWeight" ng-model="titFontWeight"><button class="button titButton">Update</button></label>
+                            <br>
+                            <hr>
+                            <br>
+                        <label for="ctaCol"><div title="Accepts RGB value, HEX value, or Color name (e.g. rgb(0,0,0), #000, Black)" class="ion-information-circled"></div>CTA-Color:<input type="text" id="ctaCol" ng-model="ctacolor"></label>
+                            <br>
+                        <label for="ctaFontSize"><div title="Accepts any positive integer. Make sure to include &quot;px&quot; on the end (e.g. 14px)" class="ion-information-circled"></div>CTA-Size:<input type="text" id="ctaFontSize" ng-model="ctaFontSize"></label>
+                            <br>
+                        <label for="ctaFontWeight"><div title="Accepts any font weight values (e.g. 100, 200, 300, 400, 500, 600, 700, 800, 900, normal, bold, bolder, lighter)" class="ion-information-circled"></div>CTA-Weight:<input type="text" id="ctaFontWeight" ng-model="ctaFontWeight"><button class="button ctaButton">Update</button></label>
+                            <br>
+                            <hr>
+                            <br>
+                        <button class="button tagButton" title="Click to download a .txt file with the code for the ad shown in the middle of the page (also will match the exposed code on the right of the page).">Get Tag Code</button>
+                     </div>
+                           
+                           
+
+                     <div class="box_middle">
+                        <p>Lorem ipsum dolor sit. Doloremque tempore deleniti eos nisi fuga at eligendi quaerat odit nam aspernatur, dolorem inventore animi sunt! Lorem ipsum dolor sit amet. Necessitatibus, hic. Minus suscipit, saepe? Consecte.</p>
+                        <div style="height:250px;width:300px;margin:auto">
+                            <an-ad></an-ad>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing. Possimus quia natus, culpa, eveniet quia architecto odio veritatis quae maiores eum molestiae tempore quia provident quia explicabo harum in unde fuga quia porro atque perspiciatis!</p>
+                     </div>
+                          
+                          
+                          
+                     <div class="box_right" title="This is the tag running in the center of the page.  The values are dynamically updated when you type in the fields to the left.  You can copy this directly or click the &quot;Get Tag Code&quot; button on the left to download a .txt file.">
+                        <an-tag></an-tag>
+                            
+                     </div>
+                </div> 
         </main>
     </body>
 </html>

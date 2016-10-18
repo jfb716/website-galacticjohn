@@ -10,9 +10,9 @@
         <title>GalacticJohn - Header Bidding</title>
         
         <!-- Site Styles -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="resources/css/style.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" type="text/css" href="player.css">
+
 
       
         <!-- JavaScript API's -->
@@ -21,21 +21,179 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
         
         <!-- My JavaScript -->
         <script src="jquery.js"></script>
         <script src="angular.js"></script>
-        <script src="script.js"></script>
-        <script src="player.js"></script>
         
+        <!-- Header Bidding -->
+        <script>
+            var PREBID_TIMEOUT = 1000;
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function () {
+                googletag.pubads().disableInitialLoad();
+            });
+            /* pbjs.initAdserver will be called either when all bids are back, or
+             when the timeout is reached.
+             */
+            function initAdserver() {
+                if (pbjs.initAdserverSet) return;
+                googletag.cmd.push(function () {
+                    pbjs.que.push(function () {
+                        pbjs.setTargetingForGPTAsync();
+                    });
+                    googletag.pubads().refresh();
+                });
+                pbjs.initAdserverSet = true;
+            }
+            // Load GPT when timeout is reached.
+            setTimeout(initAdserver, PREBID_TIMEOUT);
+            var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+            // Load the Prebid Javascript Library Async. We recommend loading it immediately after
+            // the initAdserver() and setTimeout functions.
+            (function () {
+                var d = document;
+                var pbs = d.createElement("script");
+                pbs.type = "text/javascript";
+                pbs.src = 'http://www.wheresbarney.com/an/prebid.js';
+                var target = d.getElementsByTagName("head")[0];
+                target.insertBefore(pbs, target.firstChild);
+            })();
+            //load GPT library here
+            (function () {
+                var gads = document.createElement('script');
+                gads.async = true;
+                gads.type = 'text/javascript';
+                var useSSL = 'https:' == document.location.protocol;
+                gads.src = (useSSL ? 'https:' : 'http:') +
+                        '//www.googletagservices.com/tag/js/gpt.js';
+                var node = document.getElementsByTagName('script')[0];
+                node.parentNode.insertBefore(gads, node);
+            })();
+            pbjs.que.push(function () {
+                /* 1. Register bidder tag Ids
+                 Registers the bidder tags for your ad units. Once the prebid.js
+                 library loads, it reads the pbjs.adUnits object and sends out
+                 bid requests. Find the complete reference on bidders at
+                 http://prebid.org/bidders.html.
+                 code:  Your GPT slotÃ¢â‚¬â„¢s ad unit path. If they donÃ¢â‚¬â„¢t match, prebid.js
+                 would not be able to set targeting correctly
+                 sizes: All sizes your ad unit accepts. They should match with GPT.
+                 */
+                var adUnits = [
+                    {
+                     code: '/1023632/300x250',
+                sizes: [[300, 250]],
+               bids: [
+                      {
+                        bidder: 'audienceNetwork',
+                        params: {
+                          placementId: '542426755904328_567859580027712',
+                          testMode: true,
+                                }
+                            }, 
+
+
+                        ]
+                    }
+                ];
+                //add the adUnits
+                pbjs.addAdUnits(adUnits);
+                //register a callback handler
+                pbjs.addCallback('adUnitBidsBack', function (adUnitCode) {
+                    console.log('ad unit bids back for : ' + adUnitCode);
+                });
+                /* Request bids for the added ad units. If adUnits or adUnitCodes are
+                 not specified, the function will request bids for all added ad units.
+                 */
+                pbjs.requestBids({
+                    /* The bidsBack function will be called when either timeout is
+                     reached, or when all bids come back, whichever happens sooner.
+                     */
+                    bidsBackHandler: function (bidResponses) {
+                        initAdserver();
+                    }
+                    /* You can specify specific `adUnitCodes` to only request bids
+                     for certain ad units.
+                     adUnitCodes: ['code1', 'code2']
+                     */
+                    /* You can also make one off bid requests for the given `adUnits`.
+                     adUnits: [adUnit2, adUnit1]
+                     */
+                    /* The bidsBackHandler will be executed either when all bids are
+                     back, or when the timeout is reached.
+                     timeout: 1000
+                     */
+                });
+                console.log('begin bid resp logging');
+                //console.log('bid resp: ' + bidResponse);
+                console.log('end bid resp logging');
+                /* 2. Configure Ad Server Targeting
+                 The below section defines what key value targeting will be sent to GPT.
+                 For each bidderÃ¢â‚¬â„¢s bid, Prebid.js will set the below 4 keys (hb_bidder,
+                 hb_adid, hb_pb, hb_size) with their corresponding values.
+                 Bidders all have different recommended ad server line item targeting and
+                 creative setup. To remove the headache for you, Prebid.js has a default
+                 recommended query string targeting setting for all bidders.
+                 If youÃ¢â‚¬â„¢d like to customize the key value pairs, you can overwrite the settings
+                 as the below example shows. Let your ad ops team know about the change, so they
+                 can update the line item targeting accordingly.
+                 */
+
+                pbjs.bidderSettings = {
+                    standard: {
+                        adserverTargeting: [
+                             {
+                         key: "fb_bidid",
+                        val: function (bidResponse) {
+                          // make the bidId available for targeting if required
+                                 console.log('bid resp bidid: ' + bidResponse.fbBidId);
+                          return bidResponse.fbBidId;
+                         } 
+                            },
+                            {   
+                                key: "hb_bidder",
+                                val: function (bidResponse) {
+                                    console.log('bid resp bcode: ' + bidResponse.bidderCode);
+                                    return bidResponse.bidderCode;
+                                }
+                            }, {
+                                key: "hb_adid",
+                                val: function (bidResponse) {
+                                    console.log('bid resp adid: ' + bidResponse.adId);
+                                    return bidResponse.adId;
+                                }
+                            }, {
+                                key: "hb_pb",
+                                val: function (bidResponse) {
+                                    console.log('bid resp pbmg: ' + bidResponse.pbMg);
+                                    return bidResponse.pbMg;
+                                }
+                            }
+                        ]
+                    },
+
+                };
+            });
+        </script>
+
+        <script>
+          googletag.cmd.push(function() {
+            googletag.defineSlot('/1023632/300x250', [300, 250], 'div-gpt-ad-1470764011841-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+          });
+        </script>
         
        
     </head>
     <body>
         <main>
             <header>
-                <h1 id="site_title">The OJ Times</h1>
+                <h1 id="site_title">The Kabob Times</h1>
                 <p id="date"></p>
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
                 <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
@@ -49,7 +207,12 @@
                     <li><a href="nativeed.html">Native Editor</a></li>
                     <li><a href="passbacktool.html">Passback Tool</a></li>
                 </ul>
-                
+                <div id='div-gpt-ad-1469912947701-0'>
+                    <script type='text/javascript'>
+                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1469912947701-0'); });
+
+                    </script>
+                </div>
         </main>
     </body>
 </html>

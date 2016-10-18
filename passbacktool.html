@@ -10,9 +10,8 @@
         <title>GalacticJohn - Passback Helper</title>
         
         <!-- Site Styles -->
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" type="text/css" href="player.css">
+        <link rel="stylesheet" href="resources/css/style.css">
+        <link rel="stylesheet" type="text/css" href="resources/css/passbackhelper.css">
 
       
         <!-- JavaScript API's -->
@@ -21,20 +20,18 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
         
         <!-- My JavaScript -->
-        <script src="jquery.js"></script>
-        <script src="angular.js"></script>
-        <script src="script.js"></script>
-        <script src="player.js"></script>
+        <script src="resources/javascript/jquery.js"></script>
+        <script src="resources/javascript/angular.js"></script>
+        <script src="resources/javascript/script.js"></script>
         
        
     </head>
     <body>
         <main>
             <header>
-                <h1 id="site_title">The OJ Times</h1>
+                <h1 id="site_title">The Kabob Times</h1>
                 <p id="date"></p>
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
                 <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
@@ -48,7 +45,124 @@
                     <li><a href="nativeed.html">Native Editor</a></li>
                     <li><a href="passbacktool.html">Passback Tool</a></li>
                 </ul>
-                
+                <div id="passbackHelper">
+                       
+                    <button id="demo_on">Demo On</button><button id="demo_off">Demo Off</button>
+                    <div class="type_box">
+                        <label for="passback_type">Passback Type: </label>
+                            <select class="passback_type menu" name="passback_type">
+                              <option selected="selected" value="nothing" class="nothing">-</option>
+                              <option value="passback_1" class="one">DFP</option>
+                              <option value="passback_2" class="two">AdX Async</option>
+                              <option value="passback_3" class="three">AdX Sync</option>
+                              <option value="passback_4" class="four">AdSense Async</option>
+                              <option value="passback_5" class="five">AdSense Sync</option>
+                              <option value="passback_6" class="six">Rubicon</option>
+                            </select>
+                       </div>
+                    <div class="controlBox">
+                       <div class="dfp">
+                              <label for="adSenseAsyncWidth">Width: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Height: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                          </div>
+                          <div class="adxAsync">
+                              <label for="adSenseAsyncWidth">Width: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="adxasyncwidth">
+                              <br>
+                              <label for="adSenseAsyncWidth">Height: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="adxasyncheight">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="adxasyncclientid">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="adxasyncslotid">
+                          </div>
+                          <div class="adxSync">
+                              <label for="adSenseAsyncWidth">Width: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Height: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                          </div>
+                          <div class="adSenseAsync">
+                              <label for="adSenseAsyncWidth">Width: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="adsenseasyncwidth">
+                              <br>
+                              <label for="adSenseAsyncHeight">Height: </label>
+                              <input id="adSenseAsyncHeight" type="text" ng-model="adsenseasyncheight">
+                              <br>
+                              <label for="adSenseAsyncClientId">Ad Client ID: </label>
+                              <input id="adSenseAsyncClientId" type="text" ng-model="adsenseasyncclientid">
+                              <br>
+                              <label for="adSenseAsyncSlotId">Ad Slot ID: </label>
+                              <input id="adSenseAsyncSlotId" type="text" ng-model="adsenseasyncslotid">
+                          </div>
+                          <div class="adSenseSync">
+                              <label for="adSenseAsyncWidth">Width: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Height: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Client ID: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Slot ID: </label>
+                              <input id="adSenseAsyncWidth" type="text">
+                          </div>
+                          <div class="rubicon">
+                              <label for="adSenseAsyncWidth">Width: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="rubiconwidth">
+                              <br>
+                              <label for="adSenseAsyncWidth">Height: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="rubiconheight">
+                              <br>
+                              <label for="adSenseAsyncWidth">Account: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="rubiconaccount">
+                              <br>
+                              <label for="adSenseAsyncWidth">Site: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="rubiconsite">
+                              <br>
+                              <label for="adSenseAsyncWidth">ZoneSize: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="rubiconzonesize">
+                              <br>
+                              <label for="adSenseAsyncWidth">Ad Type: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="rubiconadtype">
+                              <br>
+                              <label for="adSenseAsyncWidth">Smart File: </label>
+                              <input id="adSenseAsyncWidth" type="text" ng-model="rubiconsmartfile">
+                          </div>
+                          <button id="executeHelper">Execute Helper</button>
+                          <button id="pageReload">Refresh Page</button>
+                           
+                       </div>
+                       <div class="tagOutput">
+                        <adx-async></adx-async>
+                        <rubicon></rubicon>
+                            
+                     </div> 
+                     <textarea id="drop_zone">Paste or Drop (.txt) Audience Network Tag Here</textarea>
+                     <div class="passbackTest">
+                         
+                     </div>
+                       
+                </div>
         </main>
     </body>
 </html>
