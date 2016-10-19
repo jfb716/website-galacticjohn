@@ -90,9 +90,9 @@ $("#executeHelper").click(function(){
            var anTag = $("#drop_zone").val();
            console.log(anTag);
             
-           $("#drop_zone").hide();
+           $("#drop_zone, .controlBox, .tagOutput").hide();
            $("#executeHelper").hide();
-           $(".passbackTest").css({"left": "25%", "hieght": "400px", "width": "555px", "padding": "75px 127px"});
+           $(".passbackTest").css({"margin-top":"25%", "margin-right":"15%"});
            $(".type_box").hide();
            $("#pageReload").show();
 

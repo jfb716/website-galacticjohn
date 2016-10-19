@@ -5,7 +5,16 @@
     background-color: #cbcbcb;
 }
 
-#demo_on, #demo_off {
+label {
+    font-size: 18px;
+}
+
+input {
+    margin: 10px;
+    font-size: 18px;
+}
+
+#demo_on, #demo_off, #executeHelper, #pageReload {
     float: left;
     margin: 30px 10px;
 }
@@ -39,6 +48,7 @@
     border: 3px ridge #8e8e8e;
     background-color: white;
     margin: 20px;
+    text-align: justify;
 }
 
 #drop_zone { 
@@ -66,14 +76,3 @@
     margin: 20px;
 }
 
-#executeHelper {
-    position: absolute;
-    bottom: 20px;
-    left: 35%;
-}
-
-#pageReload {
-    position: absolute;
-    bottom: 20px;
-    left: 35%;
-}
