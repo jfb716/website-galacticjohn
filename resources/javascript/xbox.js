@@ -1,7 +1,12 @@
-/* ------- XBOX Add Button ------- */
+
 
 $(document).ready(function(){
     
+/* ------ Table ------- */
+
+$("#myTable").DataTable();
+    
+/* ------- XBOX Add Button ------- */
 
 $("#addButton").click(function(){
    var gameDate = $("#gameDate").val();
