@@ -13,6 +13,7 @@
         
         <!-- Site Styles -->
         <link rel="stylesheet" href="resources/css/style.css">
+        <link rel="stylesheet" href="resources/css/headerbidding.css">
 
       
         <!-- JavaScript API's -->
@@ -67,27 +68,30 @@
                              {
                          key: "fb_bidid",
                         val: function (bidResponse) {
-      
-                                 console.log('bid resp bidid: ' + bidResponse.fbBidId);
-                          return bidResponse.fbBidId;
+                            console.log('bid resp bidid: ' + bidResponse.fbBidId);
+                            $("#bidId").val(bidResponse.fbBidId);
+                            return bidResponse.fbBidId;
                          } 
                             },
                             {   
                                 key: "hb_bidder",
                                 val: function (bidResponse) {
                                     console.log('bid resp bcode: ' + bidResponse.bidderCode);
+                                    $("#bidder").val(bidResponse.bidderCode);
                                     return bidResponse.bidderCode;
                                 }
                             }, {
                                 key: "hb_adid",
                                 val: function (bidResponse) {
                                     console.log('bid resp adid: ' + bidResponse.adId);
+                                    $("#adId").val(bidResponse.adId);
                                     return bidResponse.adId;
                                 }
                             }, {
                                 key: "hb_pb",
                                 val: function (bidResponse) {
                                     console.log('bid resp pbmg: ' + bidResponse.pbMg);
+                                    $("#pb").val(bidResponse.pbMg);
                                     return bidResponse.pbMg;
                                 }
                             }
@@ -155,23 +159,25 @@
                 </ul>
                 
                     <div class="greyBox">
-                        <div id="prebidData">
-                        <label for="tokenResults" class="prebidLabels">Timeout:</label><input size="50" id="tokenResults" readonly type="text">
+                        <div id="box">
+                        <label for="bidder" class="prebidLabels">Bidder:</label><input id="bidder" readonly type="text">
                         <br>
-                        <label for="tokenResults" class="prebidLabels">Placement ID:</label><input id="requestAn" readonly type="text">
+                        <label for="testMode" class="prebidLabels">Test Mode:</label><input id="testMode" readonly type="text">
                         <br>
-                        <label for="tokenResults" class="prebidLabels">Test Mode:</label><input id="requestAn" readonly type="text">
+                        <label for="placementId" class="prebidLabels">Placement ID:</label><input size="50" id="placementId" readonly type="text">
                         <br>
-                        <label for="tokenResults" class="prebidLabels">fb_bidid:</label><input id="requestAn" readonly type="text">
                         <br>
-                        <label for="tokenResults" class="prebidLabels">hb_bidder:</label><input id="requestAn" readonly type="text">
+                        <label for="timeout" class="prebidLabels">Timeout:</label><input size="50" id="timeout" readonly type="text">
                         <br>
-                        <label for="tokenResults" class="prebidLabels">hb_adid:</label><input id="requestAn" readonly type="text">
+                        <label for="bidId" class="prebidLabels">Bid ID:</label><input size="50" id="bidId" readonly type="text">
                         <br>
-                        <label for="tokenResults" class="prebidLabels">hb_pb:</label><input id="requestAn" readonly type="text">
+                        <label for="adId" class="prebidLabels">Ad ID:</label><input size="50" id="adId" readonly type="text">
+                        <br>
+                        <label for="pb" class="prebidLabels">Bid:</label><input id="pb" readonly type="text">
                         </div>
                     </div>
-                    <div style="height:250px;width:300px;border:1px solid black;margin:auto">
+                    
+                    <div id="hbAd">
                        
                         <div id='div-gpt-ad-1' style='height:250px; width:300px;'>
                             <script>

@@ -36,7 +36,11 @@ $("#stock_price").html(stock_price);
   });
     
 
-
+/* ------- Header Bidding ------- */
+    
+    $("#timeout").val(PREBID_TIMEOUT);
+    $("#placementId").val('118220978561571_309337232783277');
+    $("#testMode").val('True');
     
     
 });
