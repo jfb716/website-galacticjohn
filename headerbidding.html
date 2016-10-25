@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -11,8 +13,6 @@
         
         <!-- Site Styles -->
         <link rel="stylesheet" href="resources/css/style.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-
 
       
         <!-- JavaScript API's -->
@@ -20,136 +20,54 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-
         
         <!-- My JavaScript -->
-        <script src="jquery.js"></script>
-        <script src="angular.js"></script>
-        
-        <!-- Header Bidding -->
-        <script>
-            var PREBID_TIMEOUT = 1000;
-            var googletag = googletag || {};
-            googletag.cmd = googletag.cmd || [];
-            googletag.cmd.push(function () {
-                googletag.pubads().disableInitialLoad();
-            });
-            /* pbjs.initAdserver will be called either when all bids are back, or
-             when the timeout is reached.
-             */
-            function initAdserver() {
-                if (pbjs.initAdserverSet) return;
-                googletag.cmd.push(function () {
-                    pbjs.que.push(function () {
-                        pbjs.setTargetingForGPTAsync();
-                    });
-                    googletag.pubads().refresh();
-                });
-                pbjs.initAdserverSet = true;
-            }
-            // Load GPT when timeout is reached.
-            setTimeout(initAdserver, PREBID_TIMEOUT);
+        <script src="resources/javascript/jquery.js"></script>
+        <script src="resources/javascript/angular.js"></script>
+   
+       
+         
+       <!-- Header Bidding -->
+       
+       <!-- Initial Config -->
+       
+        <script> 
+            var PREBID_TIMEOUT = 700;
+
+            var adUnits = [{
+                code: 'div-gpt-ad-1',
+                sizes: [[300, 250]],
+                bids: [{
+                    bidder: 'audienceNetwork',
+                    params: {
+                       placementId: '118220978561571_309337232783277',
+                       testMode: true
+                    }
+                }]
+            }];
+
             var pbjs = pbjs || {};
             pbjs.que = pbjs.que || [];
-            // Load the Prebid Javascript Library Async. We recommend loading it immediately after
-            // the initAdserver() and setTimeout functions.
-            (function () {
-                var d = document;
-                var pbs = d.createElement("script");
-                pbs.type = "text/javascript";
-                pbs.src = 'http://www.wheresbarney.com/an/prebid.js';
-                var target = d.getElementsByTagName("head")[0];
-                target.insertBefore(pbs, target.firstChild);
-            })();
-            //load GPT library here
-            (function () {
-                var gads = document.createElement('script');
-                gads.async = true;
-                gads.type = 'text/javascript';
-                var useSSL = 'https:' == document.location.protocol;
-                gads.src = (useSSL ? 'https:' : 'http:') +
-                        '//www.googletagservices.com/tag/js/gpt.js';
-                var node = document.getElementsByTagName('script')[0];
-                node.parentNode.insertBefore(gads, node);
-            })();
-            pbjs.que.push(function () {
-                /* 1. Register bidder tag Ids
-                 Registers the bidder tags for your ad units. Once the prebid.js
-                 library loads, it reads the pbjs.adUnits object and sends out
-                 bid requests. Find the complete reference on bidders at
-                 http://prebid.org/bidders.html.
-                 code:  Your GPT slotÃ¢â‚¬â„¢s ad unit path. If they donÃ¢â‚¬â„¢t match, prebid.js
-                 would not be able to set targeting correctly
-                 sizes: All sizes your ad unit accepts. They should match with GPT.
-                 */
-                var adUnits = [
-                    {
-                     code: '/1023632/300x250',
-                sizes: [[300, 250]],
-               bids: [
-                      {
-                        bidder: 'audienceNetwork',
-                        params: {
-                          placementId: '542426755904328_567859580027712',
-                          testMode: true,
-                                }
-                            }, 
 
+          </script>
+        
+        <!-- Boilerplate -->
+        
+        <script type="text/javascript" src="http://www.wheresbarney.com/an/prebid.js" async></script>
+          <script>
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function() {
+                googletag.pubads().disableInitialLoad();
+            });
 
-                        ]
-                    }
-                ];
-                //add the adUnits
-                pbjs.addAdUnits(adUnits);
-                //register a callback handler
-                pbjs.addCallback('adUnitBidsBack', function (adUnitCode) {
-                    console.log('ad unit bids back for : ' + adUnitCode);
-                });
-                /* Request bids for the added ad units. If adUnits or adUnitCodes are
-                 not specified, the function will request bids for all added ad units.
-                 */
-                pbjs.requestBids({
-                    /* The bidsBack function will be called when either timeout is
-                     reached, or when all bids come back, whichever happens sooner.
-                     */
-                    bidsBackHandler: function (bidResponses) {
-                        initAdserver();
-                    }
-                    /* You can specify specific `adUnitCodes` to only request bids
-                     for certain ad units.
-                     adUnitCodes: ['code1', 'code2']
-                     */
-                    /* You can also make one off bid requests for the given `adUnits`.
-                     adUnits: [adUnit2, adUnit1]
-                     */
-                    /* The bidsBackHandler will be executed either when all bids are
-                     back, or when the timeout is reached.
-                     timeout: 1000
-                     */
-                });
-                console.log('begin bid resp logging');
-                //console.log('bid resp: ' + bidResponse);
-                console.log('end bid resp logging');
-                /* 2. Configure Ad Server Targeting
-                 The below section defines what key value targeting will be sent to GPT.
-                 For each bidderÃ¢â‚¬â„¢s bid, Prebid.js will set the below 4 keys (hb_bidder,
-                 hb_adid, hb_pb, hb_size) with their corresponding values.
-                 Bidders all have different recommended ad server line item targeting and
-                 creative setup. To remove the headache for you, Prebid.js has a default
-                 recommended query string targeting setting for all bidders.
-                 If youÃ¢â‚¬â„¢d like to customize the key value pairs, you can overwrite the settings
-                 as the below example shows. Let your ad ops team know about the change, so they
-                 can update the line item targeting accordingly.
-                 */
-
-                pbjs.bidderSettings = {
+            pbjs.bidderSettings = {
                     standard: {
                         adserverTargeting: [
                              {
                          key: "fb_bidid",
                         val: function (bidResponse) {
-                          // make the bidId available for targeting if required
+      
                                  console.log('bid resp bidid: ' + bidResponse.fbBidId);
                           return bidResponse.fbBidId;
                          } 
@@ -176,17 +94,45 @@
                         ]
                     },
 
-                };
+                }; 
+            
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(adUnits);
+                pbjs.requestBids({
+                    bidsBackHandler: sendAdserverRequest
+                });
             });
-        </script>
 
-        <script>
-          googletag.cmd.push(function() {
-            googletag.defineSlot('/1023632/300x250', [300, 250], 'div-gpt-ad-1470764011841-0').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-          });
-        </script>
+            function sendAdserverRequest() {
+                if (pbjs.adserverRequestSent) return;
+                pbjs.adserverRequestSent = true;
+                googletag.cmd.push(function() {
+                    pbjs.que.push(function() {
+                        pbjs.setTargetingForGPTAsync();
+                        console.log("Key Values Appended");
+                        googletag.pubads().refresh();
+                    });
+                });
+            }
+
+            setTimeout(function() {
+                sendAdserverRequest();
+            }, PREBID_TIMEOUT);
+              
+
+          </script>
+          
+          <!-- GPT Tag --> 
+          
+          <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+          
+          <script>
+              googletag.cmd.push(function() {
+                googletag.defineSlot('/27721068/header_bidding', [300, 250], 'div-gpt-ad-1').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+              });
+            </script>
         
        
     </head>
@@ -207,12 +153,40 @@
                     <li><a href="nativeed.html">Native Editor</a></li>
                     <li><a href="passbacktool.html">Passback Tool</a></li>
                 </ul>
-                <div id='div-gpt-ad-1469912947701-0'>
-                    <script type='text/javascript'>
-                        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1469912947701-0'); });
-
-                    </script>
-                </div>
+                
+                    <div class="greyBox">
+                        <div id="prebidData">
+                        <label for="tokenResults" class="prebidLabels">Timeout:</label><input size="50" id="tokenResults" readonly type="text">
+                        <br>
+                        <label for="tokenResults" class="prebidLabels">Placement ID:</label><input id="requestAn" readonly type="text">
+                        <br>
+                        <label for="tokenResults" class="prebidLabels">Test Mode:</label><input id="requestAn" readonly type="text">
+                        <br>
+                        <label for="tokenResults" class="prebidLabels">fb_bidid:</label><input id="requestAn" readonly type="text">
+                        <br>
+                        <label for="tokenResults" class="prebidLabels">hb_bidder:</label><input id="requestAn" readonly type="text">
+                        <br>
+                        <label for="tokenResults" class="prebidLabels">hb_adid:</label><input id="requestAn" readonly type="text">
+                        <br>
+                        <label for="tokenResults" class="prebidLabels">hb_pb:</label><input id="requestAn" readonly type="text">
+                        </div>
+                    </div>
+                    <div style="height:250px;width:300px;border:1px solid black;margin:auto">
+                       
+                        <div id='div-gpt-ad-1' style='height:250px; width:300px;'>
+                            <script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1'); });
+                            </script>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <div class="greyBox">
+                        
+                    </div>
+      
+                
         </main>
     </body>
 </html>
