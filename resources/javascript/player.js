@@ -33,16 +33,16 @@ window.addEventListener('load', function() {
 function playOrPause() {
     if (video.paused) {
         video.play();
-        playButton.src = 'images/pause.png';
+        playButton.src = 'resources/images/pause.png';
         update = setInterval(updatePlayer, 30);
         pauseScreen.style.display = 'none';
-        screenButton.src = 'images/play.png';
+        screenButton.src = 'resources/images/play.png';
     } else {
         video.pause();
-        playButton.src = 'images/play.png';
+        playButton.src = 'resources/images/play.png';
         window.clearInterval(update);
         pauseScreen.style.display = 'block';
-        screenButton.src = 'images/play.png';
+        screenButton.src = 'resources/images/play.png';
     }
 }
 
@@ -52,12 +52,12 @@ function updatePlayer() {
     timeField.innerHTML = getFormattedTime();
     if (video.ended) {
         window.clearInterval(update);
-        playButton.src = 'images/replay.png';
+        playButton.src = 'resources/images/replay.png';
         pauseScreen.style.display = 'block';
-        screenButton.src = 'images/replay.png';
+        screenButton.src = 'resources/images/replay.png';
     } else if (video.paused) {
-        playButton.src = 'images/play.png';
-        screenButton.src = 'images/play.png';
+        playButton.src = 'resources/images/play.png';
+        screenButton.src = 'resources/images/play.png';
     }
 }
 
@@ -87,11 +87,11 @@ function getFormattedTime() {
 function muteOrUnmute() {
     if (!video.muted) {
         video.muted = true;
-        soundButton.src = 'images/mute.png';
+        soundButton.src = 'resources/images/mute.png';
         sbar.style.display = 'none';
     } else {
         video.muted = false;
-        soundButton.src = 'images/sound.png';
+        soundButton.src = 'resources/images/sound.png';
         sbar.style.display = 'block';
     }
 }
@@ -104,7 +104,7 @@ function changeVolume(ev) {
     video.volume = (mouseX/width);
     sbar.style.width = (mouseX/width)*100 + '%';
     video.muted = false;
-    soundButton.src = 'images/sound.png';
+    soundButton.src = 'resources/images/sound.png';
     sbar.style.display = 'block';
 }
 
