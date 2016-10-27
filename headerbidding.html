@@ -14,13 +14,13 @@
         <!-- Site Styles -->
         <link rel="stylesheet" href="resources/css/style.css">
         <link rel="stylesheet" href="resources/css/headerbidding.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
       
         <!-- JavaScript API's -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         
         <!-- My JavaScript -->
         <script src="resources/javascript/jquery.js"></script>
@@ -29,6 +29,14 @@
        
          
        <!-- Header Bidding -->
+       
+       <script>
+            $(document).ready(function(){
+                $("#timeout").val(PREBID_TIMEOUT);
+                $("#placementId").val('118220978561571_309337232783277');
+                $("#testMode").val('True');
+            });
+       </script>
        
        <!-- Initial Config -->
        

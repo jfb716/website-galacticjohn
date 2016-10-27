@@ -46,7 +46,7 @@ myApp.controller('myCtrl', function($scope) {
     $scope.subFontSize = "13px";
     $scope.titFontSize = "13px";
     $scope.ctaFontSize = "13px";
-    });
+    }); 
 
 myApp.directive("defaultNativeTag", function(){
    return {

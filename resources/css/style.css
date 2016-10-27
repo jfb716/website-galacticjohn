@@ -93,24 +93,6 @@ li a:hover {
 }
 
 
-#gameInsert {
-    height: auto; 
-    width: 100%;
-    background-color: #cccccc;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    font-weight: 900;
-   
-    font-size: 18px;
-}
-
-
-.fieldsStandings {
-   margin: 10px 15px;
-    font-size: 16px;
-}
 
 
 

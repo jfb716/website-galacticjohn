@@ -25,25 +25,29 @@ $("#temp").html(temp_f);
   }
   });
     
-/* ------- Stock Price API ------- */
+/* ------- Stock Price API ------- 
 $.ajax({
-  url : "http://dev.markitondemand.com/Api/v2/Quote/jsonp?symbol=fb",
-  dataType : "jsonp",
+  url : "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22FB%22)%0A%09%09&format=json&env=http%3A%2F%2Fdatatables.org%2Falltables.env&callback=",
+  dataType : "json",
   success : function(parsed_json) {
-  var stock_price = parsed_json['LastPrice'];
-$("#stock_price").html(stock_price);
+  var price = parsed_json['Ask'];
+$("#stock_price").html(price);
   }
   });
     
 
-/* ------- Header Bidding ------- */
+$.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22FB%22)%0A%09%09&format=json&env=http%3A%2F%2Fdatatables.org%2Falltables.env&callback=", function(data) {
+    var ask = data.query.results.quote.ask;
+    console.log(ask);
+    });
     
-    $("#timeout").val(PREBID_TIMEOUT);
-    $("#placementId").val('118220978561571_309337232783277');
-    $("#testMode").val('True');
+    */
+    
     
     
 });
+    
+    
 
 
 
