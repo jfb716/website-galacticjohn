@@ -27,31 +27,21 @@ $(".passback_type").change(function(){
    }
     
     else if (value === "passback_2") {
-        console.log("AdX Async Was Selected");
+        console.log("AdX Was Selected");
         $(".adSenseAsync, .adSenseSync, .dfp, .rubicon, .adxSync, adx-async, rubicon").hide();
         $(".adxAsync, adx-async").show();
     }
+
     
     else if (value === "passback_3") {
-        console.log("AdX Sync Was Selected");
-        $(".adSenseAsync, .adSenseSync, .dfp, .rubicon, .adxAsync, adx-async, rubicon").hide();
-        $(".adxSync").show();
-    }
-    
-    else if (value === "passback_4") {
-        console.log("AdSense Async Was Selected");
+        console.log("AdSense Was Selected");
         $(".adSenseSync, .dfp, .adxAsync, .adxSync, .rubicon, adx-async, rubicon").hide();
         $(".adSenseAsync, ad-sense-async").show();
        
     }
     
-    else if (value === "passback_5") {
-        console.log("AdSense Sync Was Selected");
-        $(".adSenseAsync, .dfp, .adxAsync, .adxSync, .rubicon, adx-async, rubicon").hide();
-        $(".adSenseSync").show();
-    }
     
-    else if (value === "passback_6") {
+    else if (value === "passback_4") {
         console.log("Rubicon Was Selected");
         $(".adSenseAsync, .adSenseSync, .dfp, .adxAsync, .adxSync, adx-async, rubicon").hide();
         $(".rubicon, rubicon").show();
@@ -80,7 +70,7 @@ $("#executeHelper").click(function(){
     }
     
     else if (value === "passback_2") {
-        console.log("For Adx Async");  
+        console.log("For Adx");  
            
            $("rubicon").detach();
         
@@ -128,20 +118,61 @@ $("#executeHelper").click(function(){
         
            $(".passbackTest").html(finalTagPassback);
     }
+
     
     else if (value === "passback_3") {
-        console.log("For Adx Sync");
+        console.log("For AdSense");
+        
+        $("rubicon").detach();
+      
+        
+           var adxAsyncCode = $(".tagOutput").text();
+           console.log(adxAsyncCode);
+
+           var anTag = $("#drop_zone").val();
+           console.log(anTag);
+            
+           $("#drop_zone, .controlBox, .tagOutput").hide();
+           $("#executeHelper").hide();
+           $(".passbackTest").css({"margin-top":"25%", "margin-right":"15%"});
+           $(".type_box").hide();
+           $("#pageReload").show();
+
+           var insertSpot = anTag.indexOf("errorCode +");
+           console.log(insertSpot);
+
+           var extra = 33; 
+           console.log(extra);
+
+           var insertSpotPlus = insertSpot + extra;
+           console.log(insertSpotPlus);
+
+           var finalTag = [anTag.slice(0, insertSpotPlus), adxAsyncCode, anTag.slice(insertSpotPlus)].join('');
+           console.log(finalTag);
+        
+           var insertSpot2 = finalTag.lastIndexOf("</div>");
+           console.log(insertSpot2);
+        
+           var extra2 = 6;
+           console.log(extra2);
+        
+           var insertSpotPlus2 = insertSpot2 + extra2; 
+        
+           var finalTagPassback = [finalTag.slice(0, insertSpotPlus2), passbackSnippet, finalTag.slice(insertSpotPlus2)].join('');
+           console.log(finalTagPassback);
+   
+           var hiddenElement = document.createElement('a');
+
+           hiddenElement.href = 'data:attachment/text,' + encodeURI(finalTagPassback);
+           hiddenElement.target = '_blank';
+           hiddenElement.download = 'an_tag.txt';
+           hiddenElement.click();
+        
+           $(".passbackTest").html(finalTagPassback);
     }
+    
     
     else if (value === "passback_4") {
-        console.log("For AdSense Async");
-    }
-    
-    else if (value === "passback_5") {
-        console.log("For AdSense Sync");
-    }
-    
-    else if (value === "passback_6") {
         console.log("For Rubicon");
         
         $("adx-async").detach();
@@ -152,9 +183,9 @@ $("#executeHelper").click(function(){
            var anTag = $("#drop_zone").val();
            console.log(anTag);
             
-           $("#drop_zone").hide();
+           $("#drop_zone, .controlBox, .tagOutput").hide();
            $("#executeHelper").hide();
-           $(".passbackTest").css({"left": "25%", "hieght": "400px", "width": "555px", "padding": "75px 127px"});
+           $(".passbackTest").css({"margin-top":"25%", "margin-right":"15%"});
            $(".type_box").hide();
            $("#pageReload").show();
 

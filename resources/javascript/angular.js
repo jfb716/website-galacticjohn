@@ -32,7 +32,7 @@ myApp.directive("rubicon", function(){
 myApp.directive("anAd", function(){
    return {
        restrict: 'E',
-       template: '<iframe style="margin:0; border:0; padding:0" height="250" width="300" src="http://www.galacticjohn.com/resources/editor_tags/anAd.html"></iframe>'
+       templateUrl: 'resources/editor_tags/anAd.html' 
    } 
 });
 
