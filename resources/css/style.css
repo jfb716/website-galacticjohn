@@ -31,12 +31,14 @@ header {
 
 li a {
     display: block; 
-    padding: 14px 16px;
+    padding: 14px 4px;
     text-decoration: none; 
     text-align: center; 
     color: #fff;
     font-size: 20px;
     width: 140px;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
 }
 
 li a:hover {

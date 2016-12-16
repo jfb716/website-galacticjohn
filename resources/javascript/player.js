@@ -31,7 +31,7 @@ window.addEventListener('load', function() {
 }, false);
 
 function playOrPause() {
-    if (video.paused) {
+    if (video.paused) {        
         video.play();
         playButton.src = 'resources/images/pause.png';
         update = setInterval(updatePlayer, 30);
@@ -45,6 +45,7 @@ function playOrPause() {
         screenButton.src = 'resources/images/play.png';
     }
 }
+
 
 function updatePlayer() {
     var percentage = (video.currentTime/video.duration)*100;

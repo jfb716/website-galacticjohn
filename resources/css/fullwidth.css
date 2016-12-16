@@ -1,0 +1,18 @@
+.greyBox {
+    background-color: #cecece;
+    height: 800px;
+    padding: 50px 50px;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.phone {
+    border: 3px solid black;
+    border-radius: 15px;
+    height: 700px;
+    width: 350px;
+    display: inline-flex;
+    margin: 0 20px;
+    background-color: #ffffff;
+}
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="author" content="John F. Black">
+        <meta name="description" content="Test Site for John F. Black">
+        <meta name="keywords" content="John, John Black, John F Black, John F. Black, John Francis Black, Test Site, Test, Synacor, Facebook, NBC, NBCUniversal, LocalEdge, Buffalo, New York, New York City, NYC, Grand Island, University at Buffalo, UB, Technical Support, Ad Operations, AdOps, AdTech">
+        <title>GalacticJohn - Full Width</title>
+        
+        <!-- Site Styles -->
+        <link rel="stylesheet" href="resources/css/style.css">
+        <link rel="stylesheet" href="resources/css/fullwidth.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+      
+        <!-- JavaScript API's -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        
+        <!-- My JavaScript -->
+        <script src="resources/javascript/jquery.js"></script>
+        <script src="resources/javascript/angular.js"></script>
+   
+       
+         
+       
+       
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1 id="site_title">Full Width Format</h1>
+                <p id="date"></p>
+                <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
+                <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
+            </header>
+                <ul class="navBar">
+                    <li><a href="index.html">AN Video</a></li>
+                    <li><a href="headerbidding.html">Header Bidding</a></li>
+                    <li><a href="prebidscript.html">Prebid Script</a></li>
+                    <li><a href="fullwidth.html">Full Width</a></li>
+                    <li><a href="xbox.html">Xbox Tracker</a></li>
+                    <li><a href="nativegal.html">Native Gallery</a></li>
+                    <li><a href="nativeed.html">Native Editor</a></li>
+                    <li><a href="passbacktool.html">Passback Tool</a></li>
+                </ul>
+                
+                    <div class="greyBox">
+                       
+                       <div class="phone">
+                           <div>
+                           <div>
+                           <div style="display:none; position: relative;">
+                            <iframe src="https://www.facebook.com/audiencenetwork/iframe/" style="display:none;"></iframe>
+                            <script type="text/javascript">
+                              var data = {
+                                placementid: '118220978561571_321947744855559',
+                                format: 'fullwidth',
+                                testmode: true,
+                                onAdLoaded: function(element) {
+                                  console.log('Audience Network [118220978561571_321947744855559] ad loaded');
+                                  element.style.display = 'block';
+                                },
+                                onAdError: function(errorCode, errorMessage) {
+                                  console.log('Audience Network [118220978561571_321947744855559] error (' + errorCode + ') ' + errorMessage);
+                                }
+                              };
+                              !function(a,b,c,d){var e=d(),f=c.currentScript||function(){var a=c.getElementsByTagName("script");return a[a.length-1]}(),g=f.parentElement;g.dataset.placementid=data.placementid;var h=function(a){try{return a.document.referrer}catch(a){}return""},i=function(a){var b=a.indexOf("/",a.indexOf("://")+3);return b===-1?a:a.substring(0,b)},j=[b.href],k=!1,l=!1;if(a!==a.parent)for(var m,n=a;n!==m;){var o;try{l=l||n.$sf&&n.$sf.ext,o=n.location.href}catch(a){k=!0}j.push(o||h(m)),m=n,n=n.parent}var p=b.ancestorOrigins;p&&(p.length>0?data.domain=p[p.length-1]:data.domain=i(j[j.length-1])),data.url=j[j.length-1],data.channel=i(j[0]),data.width=screen.width,data.height=screen.height,data.pixelratio=window.devicePixelRatio,data.placementindex=a.ADNW&&a.ADNW.Ads?a.ADNW.Ads.length:0,data.crossdomain=k,data.safeframe=!!l;var q={};if(q.handleMessage=function(a){this.sdkEventHandler?this.sdkEventHandler(a):this.events.push(a)}.bind(q),q.iframe=g.firstElementChild,data.safeframe){var r="https://www.facebook.com/audiencenetwork/web/?sdk=5.4";for(var s in data)q[s]=data[s],"function"!=typeof data[s]&&(r+="&"+s+"="+encodeURIComponent(data[s]));q.iframe.src=r}else{var t="https://www.facebook.com/audiencenetwork/xhr/?sdk=5.4.web";for(var s in data)q[s]=data[s],"function"!=typeof data[s]&&(t+="&"+s+"="+encodeURIComponent(data[s]));var u=new XMLHttpRequest;u.open("GET",t,!0),u.withCredentials=!0,u.onreadystatechange=function(a){a.data.carouselFix=true;4===this.readyState&&a.handleMessage({name:"xhrLoaded",data:this.response,postMessageTimestamp:d(),receivedTimestamp:d()})}.bind(u,q),u.send()}q.tagJsInitTime=e,q.rootElement=g,q.events=[],a.addEventListener("message",function(a){a.source===this.iframe.contentWindow&&(a.data.receivedTimestamp=d(),this.handleMessage(a.data))}.bind(q),!1),q.tagJsIframeAppendedTime=d(),a.ADNW=a.ADNW||{},a.ADNW.Ads=a.ADNW.Ads||[],a.ADNW.Ads.push(q),a.ADNW.init&&a.ADNW.init(q)}(window,location,document,Date.now||function(){return+new Date});
+                            </script>
+                            <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw.js" async></script>
+                          </div>
+                          </div>
+                          </div>
+                       </div>
+                       
+                       
+                       <div class="phone">
+                           
+                       </div>
+                        
+                    </div>
+                    
+      
+                
+        </main>
+    </body>
+</html>
+
