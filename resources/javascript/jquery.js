@@ -3,7 +3,29 @@
 $(document).ready(function(){   
 
 
+/* ------ Hamburger ------*/
+if (window.matchMedia("(max-width: 500px)").matches) {
+$( ".cross" ).hide();
+$( ".navBar" ).hide();
+$( ".hamburger" ).click(function() {
+$( ".navBar" ).slideToggle( "slow", function() {
+$( ".hamburger" ).hide();
+$( ".cross" ).show();
+});
+});
+
+$( ".cross" ).click(function() {
+$( ".navBar" ).slideToggle( "slow", function() {
+$( ".cross" ).hide();
+$( ".hamburger" ).show();
+});
+});
+    console.log("Mobile");
+} else {
+console.log("Desktop");
+}
     
+
     
 /* ------ Buttons ------- */
 $("button").button();
@@ -52,7 +74,12 @@ $.getJSON("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo
     
     
 
-
+if (window.matchMedia("(max-width: 500px)").matches) {
+    
+}
+else {
+    
+}
 
 
 
