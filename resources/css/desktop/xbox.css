@@ -19,3 +19,7 @@
     font-size: 16px;
     margin-left: 50px;
 }
+
+.mobile {
+    display: none;
+}

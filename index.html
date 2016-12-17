@@ -10,8 +10,9 @@
         <title>GalacticJohn</title>
         
         <!-- Site Styles -->
-        <link rel="stylesheet" href="resources/css/style.css">
-        <link rel="stylesheet" type="text/css" href="resources/css/player.css">
+        <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/style.css">
+        <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/player.css">
+        <link rel="stylesheet" media="(max-width:499px)" href="resources/css/mobile/player_mobile.css">
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
       
@@ -36,6 +37,8 @@
                 <p id="date"></p>
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
                 <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
+                <p class="hamburger">&#8675; Tabs &#8675;</p>
+                <p class="cross">&#8673; Tabs &#8673;</p>
             </header>
                 <ul class="navBar">
                     <li><a href="index.html">AN Video</a></li>

@@ -62,3 +62,7 @@ input {
     top: 80px;
     position: relative;
 }
+
+.mobile {
+    display: none;
+}

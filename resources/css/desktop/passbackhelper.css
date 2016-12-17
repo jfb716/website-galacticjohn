@@ -76,3 +76,6 @@ input {
     margin: 20px;
 }
 
+.mobile {
+    display: none;
+}

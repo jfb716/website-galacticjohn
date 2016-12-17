@@ -114,6 +114,9 @@ li a:hover {
 
 
 
+.hamburger, .cross {
+    display: none;
+}
 
 
 

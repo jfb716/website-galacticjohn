@@ -12,8 +12,9 @@
         <title>GalacticJohn - Header Bidding</title>
         
         <!-- Site Styles -->
-        <link rel="stylesheet" href="resources/css/style.css">
-        <link rel="stylesheet" href="resources/css/headerbidding.css">
+        <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/style.css">
+        <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/headerbidding.css">
+        <link rel="stylesheet" media="(max-width:499px)" href="resources/css/mobile/headerbidding_mobile.css">
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
       
@@ -155,6 +156,8 @@
                 <p id="date"></p>
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
                 <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
+                <p class="hamburger">&#8675; Tabs &#8675;</p>
+                <p class="cross">&#8673; Tabs &#8673;</p>
             </header>
                 <ul class="navBar">
                     <li><a href="index.html">AN Video</a></li>
@@ -171,10 +174,9 @@
                         <div id="box">
                         <label for="bidder" class="prebidLabels">Bidder:</label><input id="bidder" readonly type="text">
                         <br>
-                        <label for="testMode" class="prebidLabels">Test Mode:</label><input id="testMode" readonly type="text">
+                        <label for="testMode" class="prebidLabels">Test Mode:<br></label><input id="testMode" readonly type="text">
                         <br>
                         <label for="placementId" class="prebidLabels">Placement ID:</label><input size="50" id="placementId" readonly type="text">
-                        <br>
                         <br>
                         <label for="timeout" class="prebidLabels">Timeout:</label><input size="50" id="timeout" readonly type="text">
                         <br>
