@@ -44,7 +44,22 @@
         <script> 
             var PREBID_TIMEOUT = 700;
 
-            var adUnits = [{
+            if (window.matchMedia("(max-width: 500px)").matches) {
+                    console.log("Full Width Mobile Unit");
+                    var adUnits = [{
+                    code: 'div-gpt-ad-1',
+                    sizes: 'fullwidth',
+                    bids: [{
+                        bidder: 'audienceNetwork',
+                        params: {
+                           placementId: '118220978561571_346529649064035',
+                           testMode: true
+                        }
+                    }]
+                }];
+                } else {
+                console.log("300x250 Desktop Unit");
+                var adUnits = [{
                 code: 'div-gpt-ad-1',
                 sizes: [[300, 250]],
                 bids: [{
@@ -55,6 +70,8 @@
                     }
                 }]
             }];
+                }
+        
 
             var pbjs = pbjs || {};
             pbjs.que = pbjs.que || [];
