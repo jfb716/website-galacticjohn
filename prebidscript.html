@@ -32,8 +32,21 @@
          
         <!-- Prebid Script -->
         <script>
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function() {
+                googletag.pubads().disableInitialLoad();
+            });
+            
+            function sendAdserverRequest() {
+                googletag.cmd.push(function() {
+                        console.log("DFP Refreshed");
+                        googletag.pubads().refresh();
+                    });
+            };
+            
             var tokenToken;
-          window.anPrebidAsyncInit = function() {
+            window.anPrebidAsyncInit = function() {
             var prebid = new AudienceNetworkPrebid(
               '118220978561571_223415828042085',
               document.getElementById('prebidAd') 
@@ -43,11 +56,6 @@
                 console.log("token:" + token);
                 tokenToken = token; 
                 console.log("tokenToken1:" + tokenToken);
-                
-                /* -------- Place the DFP script on the page once the variable is defined -------- */
-                var script_html = "<scr"+"ipt async='async' src='https://www.googletagservices.com/tag/js/gpt.js'><\/scr"+"ipt>";
-
-                $(script_html).appendTo("head");
                 
                 /* ------- Jquery code for visualizing the token on the page -------- */
                 
@@ -75,7 +83,10 @@
                     else {
                         $("#tokenResults, #requestAn").css(goodStyles);
                     }
+            
             });
+                
+            sendAdserverRequest();
               
     
           };
@@ -93,10 +104,7 @@
         
         <!-- GPT Tag -->
             
-        <script>
-          var googletag = googletag || {};
-          googletag.cmd = googletag.cmd || [];
-        </script>
+        <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
 
         
             
