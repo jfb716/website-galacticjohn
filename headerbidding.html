@@ -33,6 +33,7 @@
        
        <script>
             $(document).ready(function(){
+                document.cookie = "format=fullwidth";
                 $("#timeout").val(PREBID_TIMEOUT);
                 $("#placementId").val('118220978561571_309337232783277');
                 $("#testMode").val('True');
@@ -45,35 +46,36 @@
             var PREBID_TIMEOUT = 700;
 
             if (window.matchMedia("(max-width: 500px)").matches) {
-                    console.log("Full Width Mobile Unit");
-                    var adUnits = [{
-                    code: 'div-gpt-ad-1',
-                    sizes: [[300, 250]],
-                    bids: [{
-                        bidder: 'audienceNetwork',
-                        params: {
-                           placementId: '118220978561571_346529649064035',
-                           testMode: true,
-                           fullwidth: true,
-                           native: false
-                        }
-                    }]
-                }];
-                } else {
-                console.log("300x250 Desktop Unit");
-                var adUnits = [{
-                code: 'div-gpt-ad-1',
-                sizes: [[300, 250]],
-                bids: [{
-                    bidder: 'audienceNetwork',
-                    params: {
-                       placementId: '118220978561571_309337232783277',
-                       testMode: true
+                        console.log("Mobile Ad Units in Play");
+                        var adUnits = [{
+                        code: 'div-gpt-ad-1',
+                        sizes: [[300, 250]],
+                        bids: [{
+                            bidder: 'audienceNetwork',
+                            params: {
+                               placementId: '118220978561571_346529649064035',
+                               testMode: true,
+                               fullwidth: true,
+                               native: false
+                            }
+                        }]
+                    }];
                     }
-                }]
-            }];
-                }
-        
+                    else {
+                         console.log("Desktop Ad Units in Play");
+                          var adUnits = [{
+                          code: 'div-gpt-ad-1',
+                          sizes: [[300, 250]],
+                          bids: [{
+                             bidder: 'audienceNetwork',
+                             params: {
+                                placementId: '118220978561571_309337232783277',
+                                testMode: true
+                              }
+                          }]
+                      }];
+                    }
+
 
             var pbjs = pbjs || {};
             pbjs.que = pbjs.que || [];
@@ -82,7 +84,7 @@
         
         <!-- Boilerplate -->
         
-        <script type="text/javascript" src="resources/javascript/prebid_formats.js" async></script>
+        <script type="text/javascript" src="resources/javascript/prebid.js" async></script>
           <script>
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
