@@ -48,12 +48,14 @@
                     console.log("Full Width Mobile Unit");
                     var adUnits = [{
                     code: 'div-gpt-ad-1',
-                    sizes: 'fullwidth',
+                    sizes: [[300, 250]],
                     bids: [{
                         bidder: 'audienceNetwork',
                         params: {
                            placementId: '118220978561571_346529649064035',
-                           testMode: true
+                           testMode: true,
+                           fullwidth: true,
+                           native: false
                         }
                     }]
                 }];
@@ -80,7 +82,7 @@
         
         <!-- Boilerplate -->
         
-        <script type="text/javascript" src="resources/javascript/prebid.js" async></script>
+        <script type="text/javascript" src="resources/javascript/prebid_formats.js" async></script>
           <script>
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];

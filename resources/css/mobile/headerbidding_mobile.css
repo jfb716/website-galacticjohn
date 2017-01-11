@@ -40,10 +40,7 @@ header {
 }
 
 #hbAd{
-    height: 250px;
-    width: 300px;
-    border: 1px solid black;
-    margin: 10px auto;
+    justify-content: center;
 }
 
 
