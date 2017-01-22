@@ -27,7 +27,136 @@
         <script src="resources/javascript/angular.js"></script>
         <script src="resources/javascript/player.js"></script>
 
+        <!-- Header Bidding Configss -->
+        <script>
+          var PREBID_TIMEOUT = 700;
 
+          var adUnits = [{
+              code: 'div-gpt-ad-1',
+              sizes: [[300, 250]],
+              bids: [{
+                  bidder: 'audienceNetwork',
+                  params: {
+                     placementId: '118220978561571_356276288089371',
+                     testMode: true,
+                     native: true
+                  }
+              }]
+          },{
+              code: 'div-gpt-ad-2',
+              sizes: [[300, 250]],
+              bids: [{
+                  bidder: 'audienceNetwork',
+                  params: {
+                     placementId: '118220978561571_356276791422654',
+                     testMode: true,
+                     native: true
+                  }
+              }]
+          },{
+              code: 'div-gpt-ad-3',
+              sizes: [[300, 250]],
+              bids: [{
+                  bidder: 'audienceNetwork',
+                  params: {
+                     placementId: '118220978561571_356276858089314',
+                     testMode: true,
+                     native: true
+                  }
+              }]
+          }];
+
+          var pbjs = pbjs || {};
+          pbjs.que = pbjs.que || [];
+
+        </script>
+
+        <!-- Boilerplate -->
+
+        <script type="text/javascript" src="resources/javascript/prebid.js" async></script>
+          <script>
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function() {
+                googletag.pubads().disableInitialLoad();
+            });
+
+            pbjs.bidderSettings = {
+                    standard: {
+                        adserverTargeting: [
+                             {
+                         key: "fb_bidid",
+                        val: function (bidResponse) {
+                            console.log('Bid Response Bid ID: ' + bidResponse.fbBidId);
+                            $("#bidId").val(bidResponse.fbBidId);
+                            return bidResponse.fbBidId;
+                         }
+                            },
+                            {
+                                key: "hb_bidder",
+                                val: function (bidResponse) {
+                                    console.log('Bid Response Bidder Name: ' + bidResponse.bidderCode);
+                                    $("#bidder").val(bidResponse.bidderCode);
+                                    return bidResponse.bidderCode;
+                                }
+                            }, {
+                                key: "hb_adid",
+                                val: function (bidResponse) {
+                                    console.log('Bid Response Ad ID: ' + bidResponse.adId);
+                                    $("#adId").val(bidResponse.adId);
+                                    return bidResponse.adId;
+                                }
+                            }, {
+                                key: "hb_pb",
+                                val: function (bidResponse) {
+                                    console.log('Bid Response Bid Price: ' + bidResponse.pbMg);
+                                    $("#pb").val(bidResponse.pbMg);
+                                    return bidResponse.pbMg;
+                                }
+                            }
+                        ]
+                    },
+
+                };
+
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(adUnits);
+                pbjs.requestBids({
+                    bidsBackHandler: sendAdserverRequest
+                });
+            });
+
+            function sendAdserverRequest() {
+                if (pbjs.adserverRequestSent) return;
+                pbjs.adserverRequestSent = true;
+                googletag.cmd.push(function() {
+                    pbjs.que.push(function() {
+                        pbjs.setTargetingForGPTAsync();
+                        console.log("Key Values Appended");
+                        googletag.pubads().refresh();
+                    });
+                });
+            }
+
+            setTimeout(function() {
+                sendAdserverRequest();
+            }, PREBID_TIMEOUT);
+
+
+          </script>
+
+          <!-- GPT Tag -->
+
+          <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+
+          <script>
+              googletag.cmd.push(function() {
+              googletag.defineSlot('/27721068/an_video_page', [300, 250], 'div-gpt-ad-1').addService(googletag.pubads());
+              googletag.defineSlot('/27721068/an_video_page', [300, 250], 'div-gpt-ad-2').addService(googletag.pubads());
+              googletag.defineSlot('/27721068/an_video_page', [300, 250], 'div-gpt-ad-3').addService(googletag.pubads());
+              googletag.enableServices();
+            });
+          </script>
 
     </head>
     <body>
@@ -93,7 +222,11 @@
                     <div class="content_box">{{contentLorem}}</div>
                     <div class="content_box">{{contentLorem}}</div>
                       <div class="ad_box">
-
+                        <div id='div-gpt-ad-1' style='height:250px; width:300px;'>
+                          <script>
+                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1'); });
+                          </script>
+                        </div>
                       </div>
                     <br>
                     <br>
@@ -108,7 +241,11 @@
                     <div class="content_box">{{contentLorem}}</div>
                     <div class="content_box">{{contentLorem}}</div>
                       <div class="ad_box">
-
+                        <div id='div-gpt-ad-2' style='height:250px; width:300px;'>
+                          <script>
+                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-2'); });
+                          </script>
+                        </div>
                       </div>
                     <br>
                     <br>
@@ -123,7 +260,11 @@
                     <div class="content_box">{{contentLorem}}</div>
                     <div class="content_box">{{contentLorem}}</div>
                       <div class="ad_box">
-
+                        <div id='div-gpt-ad-3' style='height:250px; width:300px;'>
+                          <script>
+                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-3'); });
+                          </script>
+                        </div>
                       </div>
 
 
