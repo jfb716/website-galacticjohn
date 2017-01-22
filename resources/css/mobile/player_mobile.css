@@ -29,10 +29,7 @@ header {
     width: 300px;
     display: inline-block;
     box-sizing: border-box;
-    padding: 10px;
     margin: 10px 30px;
-    border: 1px solid black;
-    background-color: black;
     vertical-align: top;
 }
 

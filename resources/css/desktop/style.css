@@ -6,8 +6,8 @@ body {
     width: 1200px;
     margin: auto;
     height: 100%;
-    background-color: white; 
-    border: 1px solid #888888; 
+    background-color: white;
+    border: 1px solid #888888;
     padding: 5px;
     text-align: center;
 }
@@ -26,14 +26,14 @@ header {
     margin: 0 auto;
     padding: 0;
     background-color: #000;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 li a {
-    display: block; 
+    display: block;
     padding: 14px 4px;
-    text-decoration: none; 
-    text-align: center; 
+    text-decoration: none;
+    text-align: center;
     color: #fff;
     font-size: 20px;
     width: 140px;
@@ -63,7 +63,7 @@ li a:hover {
     display: inline-block;
     box-sizing: border-box;
     padding: 20px;
-    margin: 10px 30px; 
+    margin: 10px 30px;
     border: 1px solid black;
     vertical-align: top;
     font-size: 16px;
@@ -87,10 +87,7 @@ li a:hover {
     width: 300px;
     display: inline-block;
     box-sizing: border-box;
-    padding: 10px;
-    margin: 10px 30px; 
-    border: 1px solid black;
-    background-color: black;
+    margin: 10px 30px;
     vertical-align: top;
 }
 
@@ -104,7 +101,7 @@ li a:hover {
 
 .ion-information-circled {
     margin-right: 4px;
-    color: black; 
+    color: black;
     float: left;
     background-color: white;
 }
@@ -117,10 +114,3 @@ li a:hover {
 .hamburger, .cross {
     display: none;
 }
-
-
-
-
-
-
-
