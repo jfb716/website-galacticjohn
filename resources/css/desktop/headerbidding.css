@@ -1,11 +1,8 @@
 .greyBox {
     background-color: #cecece;
-    height: 300px;
+    height: 350px;
     padding: 100px;
     box-sizing: border-box;
-    text-align: left;
-    margin: 10px;
-    position: relative;
 }
 
 #hbAd{
@@ -17,12 +14,12 @@
 
 
 #timeout, #placementId, #testMode, #bidId, #bidder, #adId, #pb {
-    background-color: #cecece; 
+    background-color: #cecece;
     border: none;
-    margin-left: 5px;
     font-weight: 800;
     font-size: 20px;
-    color: green; 
+    color: green;
+    text-align: center;
 }
 
 .prebidLabels {
@@ -31,8 +28,5 @@
 }
 
 #box {
-    position: absolute;
-    top: 50px;
-    left: 150px;  
+    margin-top: -80px;
 }
-
