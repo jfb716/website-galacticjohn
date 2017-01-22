@@ -8,7 +8,7 @@
         <meta name="description" content="Test Site for John F. Black">
         <meta name="keywords" content="John, John Black, John F Black, John F. Black, John Francis Black, Test Site, Test, Synacor, Facebook, NBC, NBCUniversal, LocalEdge, Buffalo, New York, New York City, NYC, Grand Island, University at Buffalo, UB, Technical Support, Ad Operations, AdOps, AdTech">
         <title>GalacticJohn - Prebid Script</title>
-        
+
         <!-- Site Styles -->
         <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/style.css">
         <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/prebid.css">
@@ -16,20 +16,20 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-      
+
         <!-- JavaScript API's -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-        
+
         <!-- My JavaScript -->
         <script src="resources/javascript/jquery.js"></script>
         <script src="resources/javascript/angular.js"></script>
-   
-       
-         
+
+
+
         <!-- Prebid Script -->
         <script>
             var googletag = googletag || {};
@@ -37,58 +37,58 @@
             googletag.cmd.push(function() {
                 googletag.pubads().disableInitialLoad();
             });
-            
+
             function sendAdserverRequest() {
                 googletag.cmd.push(function() {
                         console.log("DFP Refreshed");
                         googletag.pubads().refresh();
                     });
             };
-            
+
             var tokenToken;
             window.anPrebidAsyncInit = function() {
             var prebid = new AudienceNetworkPrebid(
               '118220978561571_223415828042085',
-              document.getElementById('prebidAd') 
+              document.getElementById('prebidAd')
             );
             prebid.getProfile(function(profile, j) {
               var token = profile.token;
                 console.log("token:" + token);
-                tokenToken = token; 
+                tokenToken = token;
                 console.log("tokenToken1:" + tokenToken);
-                
+
                 /* ------- Jquery code for visualizing the token on the page -------- */
-                
+
                 $("#tokenResults").val(tokenToken);
                 $("#requestAn").val(function(){
                    if (tokenToken === 'nobid') {
                        return 'No';
-                   } 
+                   }
                     else {
                         return 'Yes';
                     }
                 });
 
                 var goodStyles = {
-                  color : "green"  
+                  color : "green"
                 };
 
                 var badStyles = {
-                  color : "red"  
+                  color : "red"
                 };
 
                 if (tokenToken === 'nobid') {
-                  $("#tokenResults, #requestAn").css(badStyles);  
-                } 
+                  $("#tokenResults, #requestAn").css(badStyles);
+                }
                     else {
                         $("#tokenResults, #requestAn").css(goodStyles);
                     }
-            
+
             });
-                
+
             sendAdserverRequest();
-              
-    
+
+
           };
 
           (function(d, s, id){
@@ -101,28 +101,28 @@
         </script>
 
 
-        
+
         <!-- GPT Tag -->
-            
+
         <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
 
-        
-            
+
+
         <script>
-          
+
           googletag.cmd.push(function() {
             console.log("tokenToken2:" + tokenToken);
             googletag.defineSlot('/27721068/johnfblack_prebid_test', [300, 250], 'div-gpt-ad-1476566875985-0').setTargeting('audnet', [tokenToken]).addService(googletag.pubads());
             googletag.pubads().enableSingleRequest();
             googletag.enableServices();
           });
-        
+
         </script>
-        
-            
-        
-        
-       
+
+
+
+
+
     </head>
     <body>
         <main>
@@ -130,7 +130,7 @@
                 <h1 id="site_title">Prebid Script - Banner</h1>
                 <p id="date"></p>
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
-                <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
+                <p id="stock">FB Ask Price: &#36;<span id="stock_price"></span> </p>
                 <p class="hamburger">&#8675; Tabs &#8675;</p>
                 <p class="cross">&#8673; Tabs &#8673;</p>
             </header>
@@ -144,7 +144,7 @@
                     <li><a href="nativeed.html">Native Editor</a></li>
                     <li><a href="passbacktool.html">Passback Tool</a></li>
                 </ul>
-                
+
                     <div class="greyBox">
                         <div id="prebidData">
                         <label for="tokenResults" class="prebidLabels">Prebid Token Results:</label><input size="50" id="tokenResults" readonly type="text">
@@ -152,23 +152,22 @@
                         <label for="tokenResults" class="prebidLabels">Request Audience Network:</label><input id="requestAn" readonly type="text">
                         </div>
                     </div>
-                    
+
                     <div id="prebidAd">
-                    
+
                         <div id='div-gpt-ad-1476566875985-0' style='height:250px; width:300px;'>
                         <script>
                         googletag.cmd.push(function() { googletag.display('div-gpt-ad-1476566875985-0'); });
                         </script>
                         </div>
-                    
+
                     </div>
-                    
+
                     <div class="greyBox">
-                        
+
                     </div>
-      
-                
+
+
         </main>
     </body>
 </html>
-

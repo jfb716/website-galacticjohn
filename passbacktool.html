@@ -8,27 +8,27 @@
         <meta name="description" content="Test Site for John F. Black">
         <meta name="keywords" content="John, John Black, John F Black, John F. Black, John Francis Black, Test Site, Test, Synacor, Facebook, NBC, NBCUniversal, LocalEdge, Buffalo, New York, New York City, NYC, Grand Island, University at Buffalo, UB, Technical Support, Ad Operations, AdOps, AdTech">
         <title>GalacticJohn - Passback Helper</title>
-        
+
         <!-- Site Styles -->
         <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/style.css">
         <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/passbackhelper.css">
         <link rel="stylesheet" media="(max-width:499px)" href="resources/css/mobile/passbacktool_mobile.css">
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-      
+
         <!-- JavaScript API's -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        
+
         <!-- My JavaScript -->
         <script src="resources/javascript/jquery.js"></script>
         <script src="resources/javascript/angular.js"></script>
         <script src="resources/javascript/script.js"></script>
         <script src="resources/javascript/passback.js"></script>
-        
-       
+
+
     </head>
     <body>
         <main>
@@ -36,7 +36,7 @@
                 <h1 id="site_title">Passback Tool</h1>
                 <p id="date"></p>
                 <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
-                <p id="stock">FB Last Close: &#36;<span id="stock_price"></span> </p>
+                <p id="stock">FB Ask Price: &#36;<span id="stock_price"></span> </p>
                 <p class="hamburger">&#8675; Tabs &#8675;</p>
                 <p class="cross">&#8673; Tabs &#8673;</p>
             </header>
@@ -52,7 +52,7 @@
                 </ul>
                 <p class="mobile">Desktop Only</p>
                 <div id="passbackHelper">
-                       
+
                     <button id="demo_on">Demo On</button><button id="demo_off">Demo Off</button>
                     <button id="executeHelper">Execute Helper</button>
                           <button id="pageReload">Refresh Page</button>
@@ -128,21 +128,20 @@
                               <label for="adSenseAsyncWidth">Smart File: </label>
                               <input id="adSenseAsyncWidth" type="text" ng-model="rubiconsmartfile">
                           </div>
-                          
-                           
+
+
                        </div>
                        <div class="tagOutput">
                         <adx-async></adx-async>
                         <rubicon></rubicon>
-                            
-                     </div> 
+
+                     </div>
                      <textarea id="drop_zone">Paste or Drop (.txt) Audience Network Tag Here</textarea>
                      <div class="passbackTest">
-                         
+
                      </div>
-                       
+
                 </div>
         </main>
     </body>
 </html>
-

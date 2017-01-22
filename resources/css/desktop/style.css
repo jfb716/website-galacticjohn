@@ -69,6 +69,7 @@ li a:hover {
     font-size: 16px;
     color: #a8a8a8;
     text-align: left;
+    border-radius: 5px;
 }
 
 .section_name {
