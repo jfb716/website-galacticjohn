@@ -52,14 +52,14 @@
                     <li><a href="passbacktool.html">Passback Tool</a></li>
                 </ul>
                 <p class="mobile">Desktop Only</p>
-                    <div id="gameInsert">
+                    <form method="post" action="resources/php/add.php" id="gameInsert">
                         Date: <input type="date" name="date" class="fieldsStandings" id="gameDate">
                         Game: <select class="fieldsStandings" id="gamePlayed">
                             <option value="NHL 2012">NHL 2012</option>
                             <option value="NHL 2013">NHL 2013</option>
                             <option value="FIFA 2012">FIFA 2012</option>
                         </select>
-                    <br>
+                        <br>
                         Home: <select class="fieldsStandings" id="home">
                             <option value="John">John</option>
                             <option value="Oleg">Oleg</option>
@@ -86,8 +86,8 @@
                         Lose Goals: <input type="number" min="0" max="10" class="fieldsStandings" id="loseGoals">
                         <br>
                         <hr>
-                        <button id="addButton">Add</button>
-                    </div>
+                        <button type="submit" id="addButton" value="Add"></button>
+                    </form>
 
                     <table id="myTable">
                         <thead>
@@ -114,22 +114,13 @@
                         </tfoot>
                         <tbody>
                             <tr>
-                                <td>2016-10-01</td>
-                                <td>John</td>
-                                <td>Oleg</td>
-                                <td>John</td>
-                                <td>4</td>
-                                <td>2</td>
-                                <td>NHL 2012</td>
-                            </tr>
-                            <tr>
-                                <td>2016-10-01</td>
-                                <td>David</td>
-                                <td>Amit</td>
-                                <td>Amit</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>NHL 2012</td>
+                                <td id="date"></td>
+                                <td id="home"></td>
+                                <td id="away"></td>
+                                <td id="winner"></td>
+                                <td id="win_goals"></td>
+                                <td id="lose_goals"></td>
+                                <td id="game"></td>
                             </tr>
                         </tbody>
                     </table>
