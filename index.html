@@ -10,21 +10,16 @@
         <title>GalacticJohn</title>
 
         <!-- Site Styles -->
-        <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/style.css">
-        <link rel="stylesheet" media="(min-width:500px)" href="resources/css/desktop/player.css">
-        <link rel="stylesheet" media="(max-width:499px)" href="resources/css/mobile/player_mobile.css">
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-
+        <link rel="stylesheet" href="/resources/css/desktop/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
         <!-- JavaScript API's -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
         <!-- My JavaScript -->
         <script src="resources/javascript/jquery.js"></script>
-        <script src="resources/javascript/angular.js"></script>
         <script src="resources/javascript/player.js"></script>
 
         <!-- Header Bidding Configss -->
@@ -160,25 +155,42 @@
 
     </head>
     <body>
-        <main>
-            <header>
-                <h1 id="site_title">AN Video</h1>
-                <p id="date"></p>
-                <p id="weather">NYC Temperature: <span id="temp"></span>&deg;F</p>
-                <p id="stock">FB Ask Price: &#36;<span id="stock_price"></span> </p>
-                <p class="hamburger">&#8675; Tabs &#8675;</p>
-                <p class="cross">&#8673; Tabs &#8673;</p>
-            </header>
-                <ul class="navBar">
-                    <li><a href="index.html">AN Video</a></li>
-                    <li><a href="headerbidding.html">Header Bidding</a></li>
-                    <li><a href="prebidscript.html">Prebid Script</a></li>
-                    <li><a href="fullwidth.html">Full Width</a></li>
-                    <li><a href="xbox.html">Xbox Tracker</a></li>
-                    <li><a href="nativegal.html">Native Gallery</a></li>
-                    <li><a href="nativeed.html">Native Editor</a></li>
-                    <li><a href="passbacktool.html">Passback Tool</a></li>
-                </ul>
+          <header>
+                <div class="container">
+                  <nav class="navbar navbar-inverse bg-inverse bg-faded navbar-toggleable-md">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                      <img src="/resources/images/an.png" width="30" height="30" style="border-radius:15px" class="d-inline-block align-top" alt="">GalacticJohn</a>
+                      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/headerBidding">Header Bidding</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/prebidScript">Prebid Script</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/fullWidth">Full Width</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/xboxTracker">Xbox Tracker</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/nativeGallery">Native Gallery</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/nativeEditor">Native Editor</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/passbackTool">Passback Tool</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+          </header>
 
                     <div class="player">
                      <div id="player">
@@ -268,6 +280,5 @@
                       </div>
 
 
-        </main>
     </body>
 </html>

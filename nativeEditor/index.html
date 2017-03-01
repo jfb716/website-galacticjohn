@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="myApp" ng-controller="myCtrl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="author" content="John F. Black">
+        <meta name="description" content="Test Site for John F. Black">
+        <meta name="keywords" content="John, John Black, John F Black, John F. Black, John Francis Black, Test Site, Test, Synacor, Facebook, NBC, NBCUniversal, LocalEdge, Buffalo, New York, New York City, NYC, Grand Island, University at Buffalo, UB, Technical Support, Ad Operations, AdOps, AdTech">
+        <title>GalacticJohn - Native Editor</title>
+
+        <!-- Site Styles -->
+        <link rel="stylesheet" href="resources/css/desktop/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+        <!-- JavaScript API's -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+        <!-- My JavaScript -->
+        <script src="resources/javascript/jquery.js"></script>
+        <script src="resources/javascript/angular.js"></script>
+        <script src="resources/javascript/nativeeditor.js"></script>
+
+
+
+    </head>
+    <body>
+          <header>
+                <div class="container">
+                  <nav class="navbar navbar-inverse bg-inverse bg-faded navbar-toggleable-md">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                      <img src="/resources/images/an.png" width="30" height="30" style="border-radius:15px" class="d-inline-block align-top" alt="">GalacticJohn</a>
+                      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/headerBidding">Header Bidding</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/prebidScript">Prebid Script</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/fullWidth">Full Width</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/xboxTracker">Xbox Tracker</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/nativeGallery">Native Gallery</a>
+                          </li>
+                          <li class="nav-item active">
+                            <a class="nav-link" href="http://galacticjohn.com/nativeEditor">Native Editor</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="http://galacticjohn.com/passbackTool">Passback Tool</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </nav>
+                  </div>
+          </header>
+                <p class="mobile">Desktop Only</p>
+                <div id="nativeEditor">
+                  <div class="box_left">
+                        <label for="placementId">Placement-ID:<input id="placementId" type="text" ng-model="placementid"></label>
+                            <br>
+                            <hr>
+                        <label for="fontFam"><div title="Enter fonts seperated by commas, if font is more than one word enclose in double quotes (e.g. &quot;Times New Roman&quot;, Georgia, Serif)" class="ion-information-circled"></div>Font-Family:<input type="text" id="fontFam" ng-model="fontfamily"><button class="button fontFamButton">Update</button></label>
+                            <br>
+                            <hr>
+                        <label for="subFontSize"><div title="Accepts any positive integer. Make sure to include &quot;px&quot; on the end (e.g. 14px)" class="ion-information-circled"></div>SubTitle-Size:<input type="text" id="subFontSize" ng-model="subFontSize"></label>
+                            <br>
+                        <label for="subFontWeight"><div title="Accepts any font weight values (e.g. 100, 200, 300, 400, 500, 600, 700, 800, 900, normal, bold, bolder, lighter)" class="ion-information-circled"></div>SubTitle-Weight:<input type="text" id="subFontWeight" ng-model="subFontWeight"><button class="button subTitButton">Update</button></label>
+                            <br>
+                            <hr>
+                        <label for="titFontSize"><div title="Accepts any positive integer. Make sure to include &quot;px&quot; on the end (e.g. 14px)" class="ion-information-circled"></div>Title-Size:<input type="text" id="titFontSize" ng-model="titFontSize"></label>
+                            <br>
+                        <label for="titFontWeight"><div title="Accepts any font weight values (e.g. 100, 200, 300, 400, 500, 600, 700, 800, 900, normal, bold, bolder, lighter)" class="ion-information-circled"></div>Title-Weight:<input type="text" id="titFontWeight" ng-model="titFontWeight"><button class="button titButton">Update</button></label>
+                            <br>
+                            <hr>
+                            <br>
+                        <label for="ctaCol"><div title="Accepts RGB value, HEX value, or Color name (e.g. rgb(0,0,0), #000, Black)" class="ion-information-circled"></div>CTA-Color:<input type="text" id="ctaCol" ng-model="ctacolor"></label>
+                            <br>
+                        <label for="ctaFontSize"><div title="Accepts any positive integer. Make sure to include &quot;px&quot; on the end (e.g. 14px)" class="ion-information-circled"></div>CTA-Size:<input type="text" id="ctaFontSize" ng-model="ctaFontSize"></label>
+                            <br>
+                        <label for="ctaFontWeight"><div title="Accepts any font weight values (e.g. 100, 200, 300, 400, 500, 600, 700, 800, 900, normal, bold, bolder, lighter)" class="ion-information-circled"></div>CTA-Weight:<input type="text" id="ctaFontWeight" ng-model="ctaFontWeight"><button class="button ctaButton">Update</button></label>
+                            <br>
+                            <hr>
+                            <br>
+                        <button class="button tagButton" title="Click to download a .txt file with the code for the ad shown in the middle of the page (also will match the exposed code on the right of the page).">Get Tag Code</button>
+                     </div>
+
+
+
+                     <div class="box_middle">
+                        <p>Lorem ipsum dolor sit. Doloremque tempore deleniti eos nisi fuga at eligendi quaerat odit nam aspernatur, dolorem inventore animi sunt! Lorem ipsum dolor sit amet. Necessitatibus, hic. Minus suscipit, saepe? Consecte.</p>
+                        <div style="height:250px;width:300px;margin:auto">
+                            <div style="display:none; position: relative;">
+                              <iframe style="display:none;"></iframe>
+                              <script type="text/javascript">
+                                var data = {
+                                  placementid: '118220978561571_223415828042085',
+                                  format: 'native',
+                                  testmode: true,
+                                  onAdLoaded: function(element) {
+                                    console.log('Audience Network ad loaded');
+                                    element.style.display = 'block';
+                                  },
+                                  onAdError: function(errorCode, errorMessage) {
+                                    console.log('Audience Network error (' + errorCode + ') ' + errorMessage);
+                                  }
+                                };
+                                (function(w,l,d,t){var a=t();var b=d.currentScript||(function(){var c=d.getElementsByTagName('script');return c[c.length-1];})();var e=b.parentElement;e.dataset.placementid=data.placementid;var f=function(v){try{return v.document.referrer;}catch(e){}return'';};var g=function(h){var i=h.indexOf('/',h.indexOf('://')+3);if(i===-1){return h;}return h.substring(0,i);};var j=[l.href];var k=false;var m=false;if(w!==w.parent){var n;var o=w;while(o!==n){var h;try{m=m||(o.$sf&&o.$sf.ext);h=o.location.href;}catch(e){k=true;}j.push(h||f(n));n=o;o=o.parent;}}var p=l.ancestorOrigins;if(p){if(p.length>0){data.domain=p[p.length-1];}else{data.domain=g(j[j.length-1]);}}data.url=j[j.length-1];data.channel=g(j[0]);data.width=screen.width;data.height=screen.height;data.pixelratio=w.devicePixelRatio;data.placementindex=w.ADNW&&w.ADNW.Ads?w.ADNW.Ads.length:0;data.crossdomain=k;data.safeframe=!!m;var q={};q.iframe=e.firstElementChild;var r='https://www.facebook.com/audiencenetwork/web/?sdk=5.3';for(var s in data){q[s]=data[s];if(typeof(data[s])!=='function'){r+='&'+s+'='+encodeURIComponent(data[s]);}}q.iframe.src=r;q.tagJsInitTime=a;q.rootElement=e;q.events=[];w.addEventListener('message',function(u){if(u.source!==q.iframe.contentWindow){return;}u.data.receivedTimestamp=t();if(this.sdkEventHandler){this.sdkEventHandler(u.data);}else{this.events.push(u.data);}}.bind(q),false);q.tagJsIframeAppendedTime=t();w.ADNW=w.ADNW||{};w.ADNW.Ads=w.ADNW.Ads||[];w.ADNW.Ads.push(q);w.ADNW.init&&w.ADNW.init(q);})(window,location,document,Date.now||function(){return+new Date;});
+                              </script>
+                              <script type="text/javascript" src="https://connect.facebook.net/en_US/fbadnw.js" async></script>
+                              <style>
+                                .thirdPartyRoot {
+                                    height: 248px;
+                                    line-height: 16px;
+                                    position: relative;
+                                    width: 298px;
+                                    border-style: solid;
+                                    border-color: rgb(229, 229, 229);
+                                    border-width: 1px;
+                                    border-radius: 5px;
+                                    font-family: Arial, Helvetica, sans-serif;
+                                    text-align: justify;
+                                    color: black;
+
+                                }
+                                .thirdPartyMediaClass {
+                                    width: 100%;
+                                    height: 168px;
+                                }
+
+
+
+                                .thirdPartyTitleClass {
+                                    font-size: 13px;
+                                    margin: 6px;
+                                    font-weight: bold;
+                                    line-height: 15px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                }
+                                .thirdPartyCallToActionClass {
+                                    font-weight: bold;
+                                    font-size: 13px;
+                                    text-transform: uppercase;
+                                    color: rgb(108, 135, 216);
+                                    text-align: center;
+                                }
+                                .thirdPartyCallToActionClass::after {
+                                    content: " >";
+                                }
+                                .fbAdIcon {
+                                    height: 20px;
+                                    width: 20px;
+                                    display: inline-block;
+                                    border-radius: 50%;
+                                    margin: 6px;
+                                }
+                                .fbAdIcon img {
+                                    border-radius: 50%;
+                                }
+                                .fbAdChoices {
+                                    left: inherit !important;
+                                    right: 0;
+                                    background-color: transparent !important;
+                                    margin: 6px;
+                                }
+                                .fbAdChoices img {
+                                    background-color: transparent !important;
+                                }
+                                .fbAdSubtitle {
+                                    display: inline-block;
+                                    font-weight: 800;
+                                    font-size: 13px;
+                                    position: absolute;
+                                    top: 10px;
+                                }
+                              </style>
+                              <div class="thirdPartyRoot">
+                              <a class="fbAdLink">
+                                <div class="fbAdIcon"></div>
+                                <div class="fbAdSubtitle"></div>
+                                <div class="fbAdMedia thirdPartyMediaClass"></div>
+                                <div class="fbDefaultNativeAdWrapper">
+                                  <div class="fbAdTitle thirdPartyTitleClass"></div>
+                                    <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
+                                </div>
+                              </a>
+                              </div>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing. Possimus quia natus, culpa, eveniet quia architecto odio veritatis quae maiores eum molestiae tempore quia provident quia explicabo harum in unde fuga quia porro atque perspiciatis!</p>
+                     </div>
+
+
+
+                     <div class="box_right" title="This is the tag running in the center of the page.  The values are dynamically updated when you type in the fields to the left.  You can copy this directly or click the &quot;Get Tag Code&quot; button on the left to download a .txt file.">
+                        <an-tag></an-tag>
+
+                     </div>
+                </div>
+    </body>
+</html>

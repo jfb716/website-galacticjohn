@@ -1,9 +1,9 @@
 <?php
-$conn = new mysqli("localhost","jfblack","bull1607","john_master");
+$conn = new mysqli("localhost","galacticJohn","bull1607","galacticJohn");
 if($conn->connect_error){die("error");}
 
-$sql = $conn->prepare("INSERT INTO xbox (`date`, `home`, `away`, 'winner', 'win_goals', 'lose_goals', 'game') VALUES (?,?,?,?,?,?,?)");
-$sql->bind_param("ssssiis",$_POST['date'],$_POST['home'], $_POST['away'], $_POST['winner'], $_POST['win_goals'], $_POST['lose_goals'], $_POST['game']);
+$sql = $conn->prepare("INSERT INTO xboxTracker (dates, home, away, winner, wingoals, losegoals, game) VALUES (?,?,?,?,?,?,?)");
+$sql->bind_param("ssssiis", $_POST['dates'], $_POST['home'], $_POST['away'], $_POST['winner'], $_POST['wingoals'], $_POST['losegoals'], $_POST['game']);
 
 if($sql->execute()){
   echo 'success';
