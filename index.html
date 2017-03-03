@@ -10,7 +10,7 @@
         <title>GalacticJohn</title>
 
         <!-- Site Styles -->
-        <link rel="stylesheet" href="/resources/css/desktop/style.css">
+        <link rel="stylesheet" href="resources/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
         <!-- JavaScript API's -->
@@ -19,8 +19,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
         <!-- My JavaScript -->
-        <script src="resources/javascript/jquery.js"></script>
-        <script src="resources/javascript/player.js"></script>
+        <script src="resources/js/angular.js"></script>
 
         <!-- Header Bidding Configss -->
         <script>
@@ -68,7 +67,7 @@
 
         <!-- Boilerplate -->
 
-        <script type="text/javascript" src="resources/javascript/prebid.js" async></script>
+        <script type="text/javascript" src="resources/js/prebid.js" async></script>
           <script>
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
@@ -162,7 +161,7 @@
                       <span class="navbar-toggler-icon"></span>
                     </button>
                     <a class="navbar-brand" href="/">
-                      <img src="/resources/images/an.png" width="30" height="30" style="border-radius:15px" class="d-inline-block align-top" alt="">GalacticJohn</a>
+                      <img src="resources/images/an.png" width="30" height="30" style="border-radius:15px" class="d-inline-block align-top" alt="">GalacticJohn</a>
                       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                         <ul class="navbar-nav">
                           <li class="nav-item">
@@ -191,94 +190,207 @@
                     </nav>
                   </div>
           </header>
+                  <div class="jumbotron container">
 
-                    <div class="player">
-                     <div id="player">
-
-                        <div id="video-container">
-                            <div id="screen">
-                                <img id="screen-button" src="resources/images/play.png" style="border-radius:50px;height:75px;width:75px;">
-                            </div>
-                            <video id="video" poster="resources/images/thumbnail.png">
-                                <source src="resources/videos/sample.mp4">
-                                Error, update your browser.
-                           </video>
-                        </div>
-
-                        <div id="pbar-container">
-                            <div id="pbar">
-                            </div>
-                        </div>
-
-                        <div id="buttons-container">
-                            <img id="play-button" src="resources/images/play.png">
-                            <div id="time-field">
-                                0:00 / 0:00
-                            </div>
-                            <img id="sound-button" src="resources/images/sound.png">
-                            <div id="sbar-container">
-                                <div id="sbar">
-                                </div>
-                            </div>
-                            <img id="fullscreen-button" src="resources/images/fullscreen.png">
-                        </div>
-                        </div>
                     </div>
                     <br>
                     <br>
-                    <h2 class="section_name">Top News</h2>
-                    <hr>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                      <div class="ad_box">
-                        <div id='div-gpt-ad-1' style='height:250px; width:300px;'>
-                          <script>
-                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-1'); });
-                          </script>
+                  </div>
+                    <br>
+                    <br>
+                    <div class="jumbotron container">
+                      <h2 class="section_name">Local News</h2>
+                      <hr>
+                      <div class="card-deck">
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
                         </div>
                       </div>
+                      <br>
+                      <div class="card-deck">
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="card-deck">
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <div class="ad_box" style="background-color: white; border-color: #333; border-radius: 5px;">
+                              <div id='div-gpt-ad-1' style="height:250px; width:300px;">
+                                <script>
+                                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1'); });
+                                </script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <br>
                     <br>
+                  <div class="jumbotron container">
                     <h2 class="section_name">Local News</h2>
                     <hr>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                      <div class="ad_box">
-                        <div id='div-gpt-ad-2' style='height:250px; width:300px;'>
-                          <script>
-                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-2'); });
-                          </script>
+                    <div class="card-deck">
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <p class="card-text">{{contentLorem}}</p>
                         </div>
                       </div>
-                    <br>
-                    <br>
-                    <h2 class="section_name">National News</h2>
-                    <hr>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                    <div class="content_box">{{contentLorem}}</div>
-                      <div class="ad_box">
-                        <div id='div-gpt-ad-3' style='height:250px; width:300px;'>
-                          <script>
-                          googletag.cmd.push(function() { googletag.display('div-gpt-ad-3'); });
-                          </script>
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <p class="card-text">{{contentLorem}}</p>
                         </div>
                       </div>
-
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <p class="card-text">{{contentLorem}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="card-deck">
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <p class="card-text">{{contentLorem}}</p>
+                        </div>
+                      </div>
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <p class="card-text">{{contentLorem}}</p>
+                        </div>
+                      </div>
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <p class="card-text">{{contentLorem}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="card-deck">
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <p class="card-text">{{contentLorem}}</p>
+                        </div>
+                      </div>
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <p class="card-text">{{contentLorem}}</p>
+                        </div>
+                      </div>
+                      <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                        <div class="card-block">
+                          <div class="ad_box" style="background-color: white; border-color: #333; border-radius: 5px;">
+                            <div id='div-gpt-ad-2' style='height:250px; width:300px;'>
+                              <script>
+                              googletag.cmd.push(function() { googletag.display('div-gpt-ad-2'); });
+                              </script>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                    <br>
+                    <br>
+                    <div class="jumbotron container">
+                      <h2 class="section_name">Local News</h2>
+                      <hr>
+                      <div class="card-deck">
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="card-deck">
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="card-deck">
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <p class="card-text">{{contentLorem}}</p>
+                          </div>
+                        </div>
+                        <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                          <div class="card-block">
+                            <div class="ad_box" style="background-color: white; border-color: #333; border-radius: 5px;">
+                              <div id='div-gpt-ad-3' style='height:250px; width:300px;'>
+                                <script>
+                                googletag.cmd.push(function() { googletag.display('div-gpt-ad-3'); });
+                                </script>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
     </body>
 </html>

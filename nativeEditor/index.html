@@ -10,7 +10,7 @@
         <title>GalacticJohn - Native Editor</title>
 
         <!-- Site Styles -->
-        <link rel="stylesheet" href="resources/css/desktop/style.css">
+        <link rel="stylesheet" href="/resources/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 
@@ -20,9 +20,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
         <!-- My JavaScript -->
-        <script src="resources/javascript/jquery.js"></script>
-        <script src="resources/javascript/angular.js"></script>
-        <script src="resources/javascript/nativeeditor.js"></script>
+        <script src="/resources/js/angular.js"></script>
+        <script src="/resources/js/nativeeditor.js"></script>
 
 
 
@@ -64,9 +63,8 @@
                     </nav>
                   </div>
           </header>
-                <p class="mobile">Desktop Only</p>
-                <div id="nativeEditor">
-                  <div class="box_left">
+                <div id="container">
+                  <div class="jumbotron container">
                         <label for="placementId">Placement-ID:<input id="placementId" type="text" ng-model="placementid"></label>
                             <br>
                             <hr>
@@ -97,7 +95,7 @@
 
 
 
-                     <div class="box_middle">
+                     <div class="jumbotron container">
                         <p>Lorem ipsum dolor sit. Doloremque tempore deleniti eos nisi fuga at eligendi quaerat odit nam aspernatur, dolorem inventore animi sunt! Lorem ipsum dolor sit amet. Necessitatibus, hic. Minus suscipit, saepe? Consecte.</p>
                         <div style="height:250px;width:300px;margin:auto">
                             <div style="display:none; position: relative;">
@@ -204,7 +202,7 @@
 
 
 
-                     <div class="box_right" title="This is the tag running in the center of the page.  The values are dynamically updated when you type in the fields to the left.  You can copy this directly or click the &quot;Get Tag Code&quot; button on the left to download a .txt file.">
+                     <div class="jumbotron container" title="This is the tag running in the center of the page.  The values are dynamically updated when you type in the fields to the left.  You can copy this directly or click the &quot;Get Tag Code&quot; button on the left to download a .txt file.">
                         <an-tag></an-tag>
 
                      </div>

@@ -1,7 +1,0 @@
-var iframe_obj = document.createElement("iframe");
-var iframe_html = "&lt;!DOCTYPE html&gt;&lt;head&gt;&lt;\/head&gt;&lt;body&gt;&lt;scr"+"ipt type='text/javascript'&gt;rpx_zonesize = '{{rubiconzonesize}}';&lt;\/scr"+"ipt&gt;";
-iframe_html += "&lt;scr"+"ipt type='text/javascript' language='javascript'>rp_account = '{{rubiconaccount}}'; rp_site = '{{rubiconsite}}'; rp_zonesize = '{{rubiconzonesize}}'; rp_adtype = '{{rubiconadtype}}'; rp_smartfile = '{{rubiconsmartfile}}';&lt;\/scr"+"ipt&gt;&lt;scr"+"ipt type='text/javascript' language='javascript' src='http://ads.rubiconproject.com/ad/{{rubiconaccount}}.js'&gt;&lt;/scr"+"ipt&gt;&lt;/body&gt;&lt;/html&gt;";     
-iframe_obj.srcdoc = iframe_html;
-iframe_obj.width = {{rubiconwidth}}; iframe_obj.height = {{rubiconheight}}; iframe_obj.frameBorder = 0; iframe_obj.marginWidth = 0; iframe_obj.marginHeight = 0; iframe_obj.hSpace = 0; iframe_obj.vSpace = 0; iframe_obj.scrolling = 'no';
-document.getElementsByClassName('passback_fb')[0].appendChild(iframe_obj);
-document.getElementsByClassName('passback_fb')[0].style.display = 'block';
