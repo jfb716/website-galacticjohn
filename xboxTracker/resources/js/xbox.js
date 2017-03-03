@@ -14,6 +14,7 @@ getTable();
       url: gameData.attr('action'),
       data: gameData.serialize(),
       success: function(response){
+        $('.gameAdd')[0].reset();
         getTable();
       }
     });
