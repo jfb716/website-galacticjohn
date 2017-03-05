@@ -60,7 +60,29 @@
                       </nav>
                     </div>
             </header>
-                <p class="mobile">Desktop Only</p>
+                <div class="jumbotron container">
+                  <div class="h1 text-center bg-inverse text-white rounded-top nhl-2012-standings">NHL 2012 Standings <br><small class="text-muted">(March 2017 - Present)</small></div>
+                  <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Player</th>
+                        <th>Home Count</th>
+                        <th>Away Count</th>
+                        <th>Games Played</th>
+                        <th>Total Wins</th>
+                        <th>Goals For</th>
+                        <th>Goals Against</th>
+                        <th>Goals +/-</th>
+                        <th>Win Percent</th>
+                      </tr>
+                    <tbody class="standingsBody">
+
+                    </tbody>
+                    </thead>
+                  </table>
+                </div>
+
+
                 <div class="jumbotron container">
                   <form method="post" action="resources/php/add.php" class="gameAdd">
                     <fieldset>
@@ -75,10 +97,7 @@
                         <label for="game" class="col-sm-2 col-form-label">Game: </label>
                         <div class="col-sm-10">
                           <select id="game" name="game" class="form-control" required>
-                            <option value="">-----</option>
                             <option value="NHL 2012">NHL 2012</option>
-                            <option value="NHL 2013">NHL 2013</option>
-                            <option value="FIFA 2012">FIFA 2012</option>
                           </select>
                         </div>
                       </div>
@@ -91,7 +110,6 @@
                               <option value="Oleg">Oleg</option>
                               <option value="Amit">Amit</option>
                               <option value="David">David</option>
-                              <option value="Heath">Heath</option>
                           </select>
                         </div>
                       </div>
@@ -104,7 +122,6 @@
                               <option value="Oleg">Oleg</option>
                               <option value="Amit">Amit</option>
                               <option value="David">David</option>
-                              <option value="Heath">Heath</option>
                           </select>
                         </div>
                       </div>
@@ -117,18 +134,17 @@
                               <option value="Oleg">Oleg</option>
                               <option value="Amit">Amit</option>
                               <option value="David">David</option>
-                              <option value="Heath">Heath</option>
                           </select>
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="wingoals" class="col-sm-2 col-form-label">Win Goals: </label>
+                        <label for="wingoals" class="col-sm-2 col-form-label">Winner Goals: </label>
                         <div class="col-sm-10">
                           <input type="number" min="0" max="15" class="form-control" id="wingoals" name="wingoals">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="losegoals" class="col-sm-2 col-form-label">Lose Goals: </label>
+                        <label for="losegoals" class="col-sm-2 col-form-label">Loser Goals: </label>
                         <div class="col-sm-10">
                           <input type="number" min="0" max="15" class="form-control" id="losegoals" name="losegoals">
                         </div>
