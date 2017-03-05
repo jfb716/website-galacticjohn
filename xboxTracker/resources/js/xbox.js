@@ -81,7 +81,7 @@ getTable();
               wpStyle = "bg-danger";
             };
 
-          html = '<tr><td>' + playerName + '</td><td>' + homeCount + '</td><td>' + awayCount + '</td><td>' + gamesPlayed + '</td><td>' + playerWins + '</td><td>' + goalsFor + '</td><td>' + goalsAgainst + '</td><td class="' + pmStyle + '">' + goalsPM + '</td><td class="percent ' + wpStyle + '">' + winPercent.toFixed(0) + '%</td></tr>';
+          html = '<tr><td style="color:white" class="bg-inverse">' + playerName + '</td><td>' + homeCount + '</td><td>' + awayCount + '</td><td>' + gamesPlayed + '</td><td class="bg-primary" style="color:white">' + playerWins + '</td><td>' + goalsFor + '</td><td>' + goalsAgainst + '</td><td class="' + pmStyle + '">' + goalsPM + '</td><td class="percent ' + wpStyle + '">' + winPercent.toFixed(0) + '%</td></tr>';
           $('.standingsBody').append(html);
         });
 
