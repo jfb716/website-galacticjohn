@@ -65,8 +65,8 @@
                   <div class="row">
                     <div class="col-8">
                       <div class="jumbotron">
-                        <div class="alert alert-info" role="alert">
-                          <strong>Audience Network Native Tag:</strong>
+                        <div class="alert alert-info text-center" role="alert">
+                          <strong>Editable Audience Network Native Tag</strong>
                         </div>
                         <textarea rows="30" cols="80" contenteditable="true" class="anTag1">
                           <?php
