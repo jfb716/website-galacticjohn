@@ -2,7 +2,8 @@ $(document).ready(function(){
 
 
   $(".anTag1").blur(function(){
-    var newTag = $(".anTag1").html();
+    $(".anTag2").empty();
+    var newTag = $(".anTag1").val();
     var newTag2 = encodeURIComponent(newTag);
     console.log(newTag2);
     $.ajax({
@@ -13,6 +14,8 @@ $(document).ready(function(){
         console.log(response);
         var tagytag = decodeURIComponent(response);
         $(".anTag1").text(tagytag);
+        var html = '<iframe src="resources/antag.txt"></iframe>';
+        $(".anTag2").html(html);
       }
     });
 

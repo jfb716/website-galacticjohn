@@ -77,7 +77,7 @@
                       </div>
                     </div>
                     <div class="col-4">
-                      <div class="jumbotron anTag">
+                      <div class="jumbotron anTag2">
                         <?php
                           echo file_get_contents("resources/antag.txt");
                         ?>
