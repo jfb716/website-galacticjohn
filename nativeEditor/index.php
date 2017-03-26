@@ -7,7 +7,7 @@
         <meta name="author" content="John F. Black">
         <meta name="description" content="Test Site for John F. Black">
         <meta name="keywords" content="John, John Black, John F Black, John F. Black, John Francis Black, Test Site, Test, Synacor, Facebook, NBC, NBCUniversal, LocalEdge, Buffalo, New York, New York City, NYC, Grand Island, University at Buffalo, UB, Technical Support, Ad Operations, AdOps, AdTech">
-        <title>GalacticJohn - Native Gallery</title>
+        <title>GalacticJohn - Native Editor</title>
 
         <!-- Site Styles -->
         <link rel="stylesheet" href="/resources/css/style.css">
@@ -20,8 +20,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
         <!-- My JavaScript -->
-        <script src="resources/javascript/angular.js"></script>
-
+        <script src="resources/editor.js"></script>
 
 
     </head>
@@ -48,10 +47,10 @@
                           <li class="nav-item">
                             <a class="nav-link" href="http://galacticjohn.com/xboxTracker">Xbox Tracker</a>
                           </li>
-                          <li class="nav-item active">
+                          <li class="nav-item">
                             <a class="nav-link" href="http://galacticjohn.com/nativeGallery">Native Gallery</a>
                           </li>
-                          <li class="nav-item">
+                          <li class="nav-item active">
                             <a class="nav-link" href="http://galacticjohn.com/nativeEditor">Native Editor</a>
                           </li>
                           <li class="nav-item">
@@ -62,8 +61,32 @@
                     </nav>
                   </div>
           </header>
-          <div id="jumbotron container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="jumbotron">
+                        <div class="alert alert-info" role="alert">
+                          <strong>Audience Network Native Tag:</strong>
+                        </div>
+                        <textarea rows="30" cols="80" contenteditable="true" class="anTag1">
+                          <?php
+                            $textDisplay = file_get_contents("resources/antag.txt");
+                            echo htmlspecialchars($textDisplay);
+                          ?>
+                        </textarea>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="jumbotron anTag">
+                        <?php
+                          echo file_get_contents("resources/antag.txt");
+                        ?>
 
-          </div>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
     </body>
 </html>

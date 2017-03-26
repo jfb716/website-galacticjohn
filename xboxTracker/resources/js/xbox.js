@@ -6,7 +6,7 @@ $(document).ready(function(){
 getTable();
 
   $('.gameAdd').submit(function(e){
-
+    $(".curChamp div").remove();
     var gameData = $('.gameAdd');
 
     $.ajax({
@@ -95,7 +95,7 @@ getTable();
             champ = key;
           }
         });
-        champHtml = '<div><strong>Current Champ: </strong>' + champ + '</div>';
+        champHtml = '<div>Current Champ: <strong>' + champ + '</strong></div>';
         $('.curChamp').append(champHtml);
         }
     });
