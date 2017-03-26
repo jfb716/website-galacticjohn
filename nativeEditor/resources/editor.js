@@ -14,8 +14,7 @@ $(document).ready(function(){
         console.log(response);
         var tagytag = decodeURIComponent(response);
         $(".anTag1").text(tagytag);
-        var html = '<iframe src="resources/antag.txt"></iframe>';
-        $(".anTag2").html(html);
+        location.reload();
       }
     });
 
