@@ -54,7 +54,7 @@
                             <a class="nav-link" href="http://galacticjohn.com/nativeEditor">Native Editor</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="http://galacticjohn.com/passbackTool">AMP mWeb</a>
+                            <a class="nav-link" href="http://galacticjohn.com/ampMweb">AMP mWeb</a>
                           </li>
                         </ul>
                       </div>

@@ -83,7 +83,7 @@ getTable();
               wpStyle = "bg-danger";
             };
 
-          html = '<tr><td style="color:white" class="bg-inverse">' + playerName + '</td><td>' + homeCount + '</td><td>' + awayCount + '</td><td>' + gamesPlayed + '</td><td class="bg-primary" style="color:white">' + playerWins + '</td><td>' + goalsFor + '</td><td>' + goalsAgainst + '</td><td class="' + pmStyle + '">' + goalsPM + '</td><td class="percent ' + wpStyle + '">' + winPercent.toFixed(0) + '%</td></tr>';
+          html = '<tr><td style="color:white" class="bg-inverse">' + playerName + '</td><td>' + homeCount + '</td><td>' + awayCount + '</td><td>' + gamesPlayed + '</td><td class="bg-primary" style="color:white">' + playerWins + '</td><td>' + goalsFor + '</td><td>' + goalsAgainst + '</td><td class="' + pmStyle + '">' + goalsPM + '</td><td class="' + playerName + 'WP percent ' + wpStyle + '">' + winPercent.toFixed(0) + '%</td></tr>';
           $('.standingsBody').append(html);
           var winNum = Number(winPercent);
           curChampObj[playerName] = winNum;
@@ -97,8 +97,10 @@ getTable();
         });
         champHtml = '<div>Current Champ: <strong>' + champ + '</strong></div>';
         $('.curChamp').append(champHtml);
-        }
+        meterCreate();
+      }
     });
   }
+
 
 });
