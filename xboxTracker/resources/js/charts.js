@@ -1,6 +1,18 @@
 
 function meterCreate(){
+  var JP = $('.JohnWP').text();
+  var JB = JP.slice(0, 2);
 
+
+  var OP = $('.OlegWP').text();
+  var OR = OP.slice(0, 2);
+
+
+  var AP = $('.AmitWP').text();
+  var AB = AP.slice(0, 2);
+
+  var DP = $('.DavidWP').text();
+  var DR = DP.slice(0, 2);
 
   google.charts.load('current', {packages: ['corechart', 'bar', 'gauge']});
   google.charts.setOnLoadCallback(drawWinsChart);
@@ -9,36 +21,24 @@ function meterCreate(){
 
     function drawWinsChart() {
 
-      JWinP = $('.JohnWP').text();
-      JWinP2 = JWinP.slice(0, 2);
-
-      OWinP = $('.OlegWP').text();
-      OWinP2 = OWinP.slice(0, 2);
-
-      AWinP = $('.AmitWP').text();
-      AWinP2 = AWinP.slice(0, 2);
-
-      DWinP = $('.DavidWP').text();
-      DWinP2 = DWinP.slice(0, 2);
-
       var data1 = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['Amit', AWinP2],
+        ['Amit', AB],
       ]);
 
       var data2 = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['John', JWinP2],
+        ['John', JB],
       ]);
 
       var data3 = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['Oleg', OWinP2],
+        ['Oleg', OR],
       ]);
 
       var data4 = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['David', DWinP2],
+        ['David', DR],
       ]);
 
       var options = {

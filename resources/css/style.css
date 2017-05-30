@@ -6,11 +6,11 @@ body {
     display: none;
 }
 
-
-.meters {
+.charts {
   width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: #292b2c;
+  padding: 20px;
 }
